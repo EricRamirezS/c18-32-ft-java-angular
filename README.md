@@ -14,8 +14,10 @@ Este repositorio contiene el código fuente para una plataforma de organización
 ## Tecnologías Utilizadas
 
 - **Backend:** Java, Spring Boot
-- **Base de datos:** Por definir
+- **Base de datos:** PostgreSQL
 - **Frontend:** Angular
+- **Servidores:** vercel.com, Fly.io
+- **Contenedor:** Docker
 
 ## Instalación y Uso
 
