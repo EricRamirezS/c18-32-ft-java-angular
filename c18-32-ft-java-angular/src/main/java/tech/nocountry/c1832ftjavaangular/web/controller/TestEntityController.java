@@ -45,6 +45,14 @@ public class TestEntityController {
     public ResponseEntity<Iterable<TestEntity>> findAllValues() {
         return ResponseEntity.ok(testEntityRepository.findAll());
     }
+    @Operation(summary = "Quick Test", description = "Get a list of values from the database. For " +
+                                                                    "testing purposes.")
+    @ApiResponse(responseCode = "200", content = {@Content(mediaType = "application/json", schema =
+    @Schema(implementation = TestEntity.class))})
+    @GetMapping
+    public ResponseEntity<Iterable<TestEntity>> quickTest() {
+        return ResponseEntity.ok(testEntityRepository.findAll());
+    }
 
     @Operation(summary = "Get a test value", description = "Get a value from the database. For testing purposes.")
     @ApiResponses({
