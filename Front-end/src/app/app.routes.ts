@@ -16,5 +16,5 @@ export const routes: Routes = [
   {path: 'voting-page', title: `Voting | ${pageTitle}`, component: VotingPageComponent},
   {path: 'voting-results', title: `Results | ${pageTitle}`, component: VotingResultsPageComponent},
   {path: '404', title: `Error 404 | ${pageTitle}`, component: Error404Component },
-  {path: '**', pathMatch: 'full', redirectTo: "404" }
+  // {path: '**', pathMatch: 'full', redirectTo: "404" }
 ];
