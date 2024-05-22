@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -22,6 +23,7 @@ import org.springframework.web.server.ResponseStatusException;
 import tech.nocountry.c1832ftjavaangular.entity.TestEntity;
 import tech.nocountry.c1832ftjavaangular.model.StringResponse;
 import tech.nocountry.c1832ftjavaangular.repository.TestEntityRepository;
+import tech.nocountry.c1832ftjavaangular.service.EmailService;
 
 @Tag(name = "Test Methods", description = "Methods provides as an example and to test database")
 @RestController
@@ -30,11 +32,14 @@ public class TestEntityController {
 
     private final TestEntityRepository testEntityRepository;
     private final ModelMapper modelMapper;
+    public final EmailService emailService;
 
-    public TestEntityController(TestEntityRepository testEntityRepository) {
+    @Autowired
+    public TestEntityController(TestEntityRepository testEntityRepository, EmailService emailService) {
         this.testEntityRepository = testEntityRepository;
         this.modelMapper = new ModelMapper();
         this.modelMapper.getConfiguration().setSkipNullEnabled(true);
+        this.emailService = emailService;
     }
 
     @Operation(summary = "Get a list of test values", description = "Get a list of values from the database. For " +
@@ -43,14 +48,6 @@ public class TestEntityController {
     @Schema(implementation = TestEntity.class))})
     @GetMapping
     public ResponseEntity<Iterable<TestEntity>> findAllValues() {
-        return ResponseEntity.ok(testEntityRepository.findAll());
-    }
-    @Operation(summary = "Quick Test", description = "Get a list of values from the database. For " +
-                                                                    "testing purposes.")
-    @ApiResponse(responseCode = "200", content = {@Content(mediaType = "application/json", schema =
-    @Schema(implementation = TestEntity.class))})
-    @GetMapping("/quick")
-    public ResponseEntity<Iterable<TestEntity>> quickTest() {
         return ResponseEntity.ok(testEntityRepository.findAll());
     }
 
