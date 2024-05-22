@@ -2,7 +2,7 @@ name: Fly Backend Deploy
 on:
   push:
     branches:
-      - PDOVG-39
+      - Back-end
 jobs:
   deploy:
     name: Deploy app
