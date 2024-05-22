@@ -7,7 +7,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -32,7 +31,6 @@ public class TestEntityController {
     private final TestEntityRepository testEntityRepository;
     private final ModelMapper modelMapper;
 
-    @Autowired
     public TestEntityController(TestEntityRepository testEntityRepository) {
         this.testEntityRepository = testEntityRepository;
         this.modelMapper = new ModelMapper();
