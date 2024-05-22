@@ -49,7 +49,7 @@ public class TestEntityController {
                                                                     "testing purposes.")
     @ApiResponse(responseCode = "200", content = {@Content(mediaType = "application/json", schema =
     @Schema(implementation = TestEntity.class))})
-    @GetMapping
+    @GetMapping("/quick")
     public ResponseEntity<Iterable<TestEntity>> quickTest() {
         return ResponseEntity.ok(testEntityRepository.findAll());
     }
