@@ -1,13 +1,11 @@
-package tech.nocountry.c1832ftjavaangular.controller;
+package tech.nocountry.c1832ftjavaangular.web.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
-public class HolaMundo {
-  @GetMapping("/holamundo")
+public class HelloWorld {
+  @GetMapping("/hola-mundo")
   public String holaMundo(){
     return "Hola Mundo";
   }
