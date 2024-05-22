@@ -1,5 +1,5 @@
 HELP.md
-!target/*jar
+target/*jar
 /target/maven*
 /target/*reports
 
