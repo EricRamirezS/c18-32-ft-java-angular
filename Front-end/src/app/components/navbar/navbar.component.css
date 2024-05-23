@@ -1,0 +1,96 @@
+.perfil {
+    border-radius: 100%;
+    width: 3rem;
+}
+.bar {
+    background-color: var(--white) !important;
+    border-bottom-left-radius: 1.9rem;
+    border-bottom-right-radius: 1.9rem;
+    /* height: 114px; */
+}
+.Heebo-Regular{
+    color: #444B55;
+    font-size: 16.3;
+}
+
+.login {
+    background-image: url(../../../assets/img/login.png) !important ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 1035px;
+    height: 594px;
+}
+
+.cerrarModal{
+    margin-bottom: 548px;
+}
+.myapp{
+    color: var(--main-blue);
+}
+
+.radius{
+    border-radius: 27.5px;
+    background-color: var(--secondary-grey);
+}
+.btn-primary{
+    border-radius: 27.5px;
+    background-color: var(--main-blue);
+}
+.mainbox{
+    border-bottom-right-radius: 55px;
+    border-top-right-radius: 55px;
+}
+
+.modal-header{
+    width: 1019px;
+    height: 594px;
+}
+
+.singup{
+    background-image: url(../../../assets/img/singup.png) !important ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 1035px;
+    height: 594px;
+}
+.box{
+    border-radius: 47.3px;
+    width: 554px;
+    height: 554px;
+    margin-left: 146px
+}
+.copyright{
+    transform: translate(-368px, 277px);
+    width: 234px;
+
+}
+.logoSingup{
+    transform: translate(53px, -253px);
+    width: 120px;
+
+}
+@media (max-width: 600px) {
+    .log   {
+        width: 455px;
+        height: 594px;
+    }
+    .log2{
+        transform: translate(58px, 2px);
+
+    }
+    .mainbox{
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 0px;
+    }
+    .login{
+        background-image: none !important;
+        border-radius: 0%;
+
+    }
+    .singup{
+        background-image: none !important;
+    }
+
+}
