@@ -58,23 +58,23 @@
 /* Colors */
 
 .main-blue{
-  color: var(--main-blue);
+  background-color: var(--main-blue) !important;
 }
 
 .main-grey{
-  color: var(--main-grey);
+  background-color: var(--main-grey) !important;
 }
 
 .black{
-  color: var(--black);
+  background-color: var(--black) !important;
 }
 
 .secondary-grey{
-  color: var(--secondary-grey);
+  background-color: var(--secondary-grey) !important;
 }
 
 .white{
-  color: var(--white);
+  background-color: var(--white) !important;
 }
 
 /* Text Color */
