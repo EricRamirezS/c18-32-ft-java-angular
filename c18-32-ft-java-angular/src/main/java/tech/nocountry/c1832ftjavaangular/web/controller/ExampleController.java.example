@@ -28,14 +28,14 @@ import tech.nocountry.c1832ftjavaangular.service.EmailService;
 @Tag(name = "Test Methods", description = "Methods provides as an example and to test database")
 @RestController
 @RequestMapping("/test")
-public class TestEntityController {
+public class ExampleController {
 
     private final TestEntityRepository testEntityRepository;
     private final ModelMapper modelMapper;
     public final EmailService emailService;
 
     @Autowired
-    public TestEntityController(TestEntityRepository testEntityRepository, EmailService emailService) {
+    public ExampleController(TestEntityRepository testEntityRepository, EmailService emailService) {
         this.testEntityRepository = testEntityRepository;
         this.modelMapper = new ModelMapper();
         this.modelMapper.getConfiguration().setSkipNullEnabled(true);
