@@ -98,3 +98,6 @@
 .text-white{
   color: var(--white);
 }
+body {
+    overflow-x: hidden;
+  }
