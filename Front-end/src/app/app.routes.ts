@@ -10,7 +10,8 @@ import { Error404Component } from './components/error-404/error-404.component';
 const pageTitle = 'MyPage.'
 
 export const routes: Routes = [
-  {path: 'home-page', title: `inicio | ${pageTitle}`, component:HomePageComponent},
+  {path: '', title: `Home Page | ${pageTitle}`, component:HomePageComponent},
+  {path: 'home-page', title: `Home Page | ${pageTitle}`, component:HomePageComponent},
   {path: 'places-to-visit', title: `Places | ${pageTitle}`, component: PlacesToVisitComponent},
   {path: 'user-panel', title: `My account | ${pageTitle}`, component: UserPanelComponent},
   {path: 'voting-page', title: `Voting | ${pageTitle}`, component: VotingPageComponent},
