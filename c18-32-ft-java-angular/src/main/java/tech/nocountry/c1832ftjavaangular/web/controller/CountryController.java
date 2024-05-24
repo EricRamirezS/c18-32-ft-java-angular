@@ -17,18 +17,18 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 import tech.nocountry.c1832ftjavaangular.entity.CountryEntity;
 import tech.nocountry.c1832ftjavaangular.model.ErrorResponse;
-import tech.nocountry.c1832ftjavaangular.repository.CountryRepository;
+import tech.nocountry.c1832ftjavaangular.service.CountryService;
 
 @Tag(name = "Countries", description = "Methods provides as an example and to test database")
 @RestController
 @RequestMapping("/countries")
 public class CountryController {
 
-    private final CountryRepository repository;
+    private final CountryService service;
 
     @Autowired
-    protected CountryController(CountryRepository repository) {
-        this.repository = repository;
+    protected CountryController(CountryService service) {
+        this.service = service;
     }
 
     @Operation(summary = "Get a list of values", description = "Get a list of values")
@@ -38,7 +38,7 @@ public class CountryController {
     })
     @GetMapping
     public ResponseEntity<Iterable<CountryEntity>> getAll() {
-        return ResponseEntity.ok(repository.findAll());
+        return ResponseEntity.ok(service.getAllCountries());
     }
 
     @Operation(summary = "Get a value by Id.", description = "Get a specific value by its Id.")
@@ -50,7 +50,7 @@ public class CountryController {
     })
     @GetMapping("/{id}")
     public ResponseEntity<CountryEntity> find(@PathVariable Integer id) {
-        CountryEntity entity = repository.findById(id)
+        CountryEntity entity = service.getCountry(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Entity not found"));
         return ResponseEntity.ok(entity);
     }
