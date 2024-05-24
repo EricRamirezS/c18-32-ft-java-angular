@@ -1,1 +1,195 @@
-<p>places-to-visit works!</p>
+<div class="main-container">
+<div class="banner info ">
+    <div class="banner">
+        <img src="./assets/imagen/bannervisit.png" alt="" class="banner-image">
+        <div class="banner-text">
+            <p>Lugares a Visitar</p>
+            <h1 class="banner-text1">Tenemos las mejores opciones</h1>  
+        </div>
+    </div>
+</div>
+<div class="card-container">
+    <div class="card-wrapper">
+        <div class="card-travel">
+            <img src="./assets/imagen/Aerolineas.png" alt="Imagen 1" class="card-image">
+            <div class="card-text">
+                Aerolíneas 
+                <h2 class="contenido">Explora y conoce las aerilineas mas populares</h2>
+            </div>
+        </div>
+        <button class="ver-lista-btn" data-modal-target="#modal1">Ver lista</button>
+    </div>
+    
+    <div class="card-wrapper">
+        <div class="card-travel">
+            <img src="./assets/imagen/Hoteles.png" alt="Imagen 2" class="card-image">
+            <div class="card-text">
+                Hoteles
+                <h2 class="contenido">Explora y conoce los Hoteles mas populares</h2>
+            </div>
+        </div>
+        <button class="ver-lista-btn" data-modal-target="#modal2">Ver lista</button>
+    </div>
+    
+    <div class="card-wrapper">
+        <div class="card-travel">
+            <img src="./assets/imagen/Tours.png" alt="Imagen 3" class="card-image">
+            <div class="card-text">
+                Tours
+                <h2 class="contenido">Explora y conoce los tour mas populares</h2>
+            </div>
+        </div>
+        <button class="ver-lista-btn" data-modal-target="#modal3">Ver lista</button>
+    </div>
+</div>
+
+<div class="modal" id="modal1">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Lista de Aerolíneas</h2>
+        <p>Contenido del modal para aerolíneas...</p>
+        <div class="card">
+            <div class="card-content">
+                <img src="./assets/imagen/KLM-logo.png" alt="Aerolínea 1" class="card-image1 round-image">
+                <div class="card-text">
+                    <h3>Aerolínea 1</h3>
+                    <p>Descripción de la aerolínea 1...</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <img src="./assets/imagen/logo avianca.png" alt="Aerolínea 2" class="card-image1 round-image">
+                <div class="card-text">
+                    <h3>Aerolínea 2</h3>
+                    <p>Descripción de la aerolínea 2...</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <img src="./assets/imagen/logo ryn.png" alt="Aerolínea 3" class="card-image1 round-image">
+                <div class="card-text">
+                    <h3>Aerolínea 3</h3>
+                    <p>Descripción de la aerolínea 3...</p>
+                </div>
+            </div>
+        </div>
+        <div class="add-airline">
+            <h3>Agregar Aerolínea</h3>
+            <input type="text" id="aerolineaInput" placeholder="Nombre de la aerolínea">
+            <button onclick="agregarAerolinea()">Agregar</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modal2">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Lista de Hoteles</h2>
+        <p>Contenido del modal para aerolíneas...</p>
+        <div class="card">
+            <div class="card-content">
+                <img src="./assets/imagen/KLM-logo.png" alt="Aerolínea 1" class="card-image1 round-image">
+                <div class="card-text">
+                    <h3>Aerolínea 1</h3>
+                    <p>Descripción de la aerolínea 1...</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <img src="./assets/imagen/logo avianca.png" alt="Aerolínea 2" class="card-image1 round-image">
+                <div class="card-text">
+                    <h3>Aerolínea 2</h3>
+                    <p>Descripción de la aerolínea 2...</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <img src="./assets/imagen/logo ryn.png" alt="Aerolínea 3" class="card-image1 round-image">
+                <div class="card-text">
+                    <h3>Aerolínea 3</h3>
+                    <p>Descripción de la aerolínea 3...</p>
+                </div>
+            </div>
+        </div>
+        <div class="add-airline">
+            <h3>Agregar Aerolínea</h3>
+            <input type="text" id="aerolineaInput" placeholder="Nombre de la aerolínea">
+            <button onclick="agregarAerolinea()">Agregar</button>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modal3">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Lista de Tours</h2>
+        <p>Contenido del modal para aerolíneas...</p>
+        <div class="card">
+            <div class="card-content">
+                <img src="./assets/imagen/KLM-logo.png" alt="Aerolínea 1" class="card-image1 round-image">
+                <div class="card-text">
+                    <h3>Aerolínea 1</h3>
+                    <p>Descripción de la aerolínea 1...</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <img src="./assets/imagen/logo avianca.png" alt="Aerolínea 2" class="card-image1 round-image">
+                <div class="card-text">
+                    <h3>Aerolínea 2</h3>
+                    <p>Descripción de la aerolínea 2...</p>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-content">
+                <img src="./assets/imagen/logo ryn.png" alt="Aerolínea 3" class="card-image1 round-image">
+                <div class="card-text">
+                    <h3>Aerolínea 3</h3>
+                    <p>Descripción de la aerolínea 3...</p>
+                </div>
+            </div>
+        </div>
+        <div class="add-airline">
+            <h3>Agregar Aerolínea</h3>
+            <input type="text" id="aerolineaInput" placeholder="Nombre de la aerolínea">
+            <button onclick="agregarAerolinea()">Agregar</button>
+        </div>
+    </div>
+</div>
+<div class="container ">
+    <div class="form-container">
+        <form>
+            <h2>Crea tu viaje</h2>
+            <div class="form-group">
+                <label for="nombre">Fecha de vuelo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Hora de vuelo:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Aerolinea</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea id="mensaje" name="mensaje" required></textarea>
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+    <div class="image-container">
+        <img src="./assets/imagen/paisaje.png" alt="Imagen">
+    </div>
+</div>
+</div>
+
+  
+  
