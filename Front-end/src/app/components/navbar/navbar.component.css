@@ -14,7 +14,7 @@
 }
 
 .login {
-    background-image: url(../../../assets/img/login.png) !important ;
+    background-image: url(../../../assets/img/navbar/login.png) !important ;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -48,7 +48,7 @@
 }
 
 .singup{
-    background-image: url(../../../assets/img/singup.png) !important ;
+    background-image: url(../../../assets/img/navbar/singup.png) !important ;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -71,6 +71,23 @@
     width: 120px;
 
 }
+
+.forgot-pass-link{
+    cursor: pointer;
+}
+
+.forgot-pass-modal-body{
+    padding: 0px 55px 30px 55px !important;
+}
+
+.img-forgot-pass{
+    width: 200px;
+}
+
+.form-reset-pass{
+    width: 100%;
+}
+
 @media (max-width: 600px) {
     .log   {
         width: 455px;
@@ -93,4 +110,11 @@
         background-image: none !important;
     }
 
+    .forgot-pass-modal-body{
+        padding: 0px 30px 0px 30px !important;
+    }
+
+    .img-forgot-pass{
+        width: 170px;
+    }
 }
