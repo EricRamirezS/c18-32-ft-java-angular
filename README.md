@@ -19,13 +19,69 @@ Este repositorio contiene el código fuente para una plataforma de organización
 - **Servidores:** vercel.com, Fly.io
 - **Contenedor:** Docker
 
-## Instalación y Uso
+## Instalación del Backend
 
-1. Clona este repositorio en tu máquina local.
-2. Instala las dependencias del backend y frontend.
-3. Configura las variables de entorno necesarias.
-4. Ejecuta el backend y frontend.
-5. Accede a la plataforma desde tu navegador.
+Para instalar y ejecutar el backend, sigue estos pasos:
+
+1. **Clonar el repositorio:** 
+  ```posh
+    git clone -b Back-end https://github.com/No-Country/c18-32-ft-java-angular/
+  ```
+
+2. **Definir variables de entorno:** 
+Crea un archivo .env en la raíz del proyecto o configura las variables de entorno en tu sistema. Asegúrate de incluir al menos las siguientes variables:
+
+  ```env
+    ENVIRONMENT_PLATFORM=dev
+    MAIL_KEY=<token_de_mailersend>
+  ```
+
+3. **Verificar la configuración de la base de datos:**
+Asegúrate de que la conexión a tu base de datos local esté configurada correctamente en `application-dev.properties`.
+
+4. **Instalar dependencias de Maven:**
+Ejecuta el siguiente comando para instalar todas las dependencias necesarias de Maven:
+  ```posh
+    mvn clean install
+  ```
+
+5.- Ejecutar el backend:
+Utiliza tu IDE favorito o ejecuta el siguiente comando desde la línea de comandos:
+
+## Instalación del Frontend
+Para instalar y ejecutar el frontend, sigue estos pasos:
+
+1.- **Clonar el repositorio:**
+
+  ```posh
+    git clone -b Front-end <URL_del_repositorio>
+  ```
+
+2.- **Instalar dependencias:**
+Navega hasta el directorio del frontend y ejecuta el siguiente comando para instalar todas las dependencias de Angular:
+
+  ```posh
+    cd frontend
+    npm install
+  ```
+
+3.- **Iniciar el servidor de desarrollo:**
+Una vez instaladas las dependencias, puedes iniciar el servidor de desarrollo ejecutando el siguiente comando:
+
+  ```posdh
+    npm start
+  ```
+
+## CI/CD del Backend
+El backend es desplegado automáticamente desde la rama "Back-end" hacia fly.io cada vez que hay un push, utilizando Github Actions. El ambiente de fly.io ya tiene definidas todas sus variables de entorno secretas y su propia base de datos PostgreSQL.
+
+Los pasos del workflow están en `.github/workflows/backend-ci.yml`.
+
+## CI/CD del Frontend
+El frontend es desplegado automáticamente desde la rama "Front-end" hacia vercel.com cada vez que hay un push, utilizando Github Actions.
+
+Los pasos del workflow están en `.github/workflows/frontend-ci.yml`.
+
 
 ## Contribución
 
