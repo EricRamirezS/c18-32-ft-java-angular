@@ -1,8 +1,10 @@
 name: Backend testing
 
 on:
+  push:
+    branches: [ "main", "Back-end" ]
   pull_request: 
-    branches: [ Back-end ]
+    branches: [ "Back-end" ]
 
 env:
   ENVIRONMENT_PLATFORM: qa
@@ -22,7 +24,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v3
         with:
           java-version: '17'
           distribution: 'temurin'
