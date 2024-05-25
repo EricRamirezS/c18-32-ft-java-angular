@@ -1,5 +1,4 @@
 name: Front-end test
-env:
 on:
   push:
     branches: [ "main", "Front-end" ]
