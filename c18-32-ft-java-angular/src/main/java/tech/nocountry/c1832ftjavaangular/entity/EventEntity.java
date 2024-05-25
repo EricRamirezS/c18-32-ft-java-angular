@@ -8,7 +8,10 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.locationtech.jts.geom.Geometry;
 import tech.nocountry.c1832ftjavaangular.model.EventType;
@@ -20,6 +23,9 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "event")
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class EventEntity extends BaseAuditEntity {
 
     @Enumerated(EnumType.STRING)

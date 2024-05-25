@@ -8,7 +8,10 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import tech.nocountry.c1832ftjavaangular.model.InviteStatus;
 
@@ -19,6 +22,9 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "group_plan_member")
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class GroupPlanMemberEntity extends BaseAuditEntity {
 
     @Enumerated(EnumType.STRING)
