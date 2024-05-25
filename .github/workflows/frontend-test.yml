@@ -1,10 +1,10 @@
 name: Front-end test
 env:
 on:
-  pull-request: [ "Front-end" ]
   push:
-    branches:
-      - Front-end
+    branches: [ "main", "Front-end" ]
+  pull_request:
+    branches: [ "Front-end" ]
 jobs:
   Test-Frontend:
     runs-on: ubuntu-latest
