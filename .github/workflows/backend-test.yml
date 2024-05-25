@@ -17,6 +17,9 @@ jobs:
   test:
     name: Backend tests runner
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./c18-32-ft-java-angular
     steps:
       - uses: actions/checkout@v3
       - name: Set up JDK 17
