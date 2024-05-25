@@ -2,8 +2,7 @@ name: Backend testing
 
 on:
   pull_request: 
-    branches:
-    - Back-end
+    branches: [ Back-end ]
 
 env:
   ENVIRONMENT_PLATFORM: qa
