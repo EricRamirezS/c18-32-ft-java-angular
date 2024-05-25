@@ -6,7 +6,10 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.locationtech.jts.geom.Geometry;
 
@@ -16,6 +19,9 @@ import java.time.OffsetDateTime;
 @Setter
 @Entity
 @Table(name = "user_data")
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class UserDataEntity extends BaseAuditEntity {
     private String name;
     @Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")

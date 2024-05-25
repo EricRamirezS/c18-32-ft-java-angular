@@ -1,6 +1,7 @@
 package tech.nocountry.c1832ftjavaangular.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 import tech.nocountry.c1832ftjavaangular.entity.CountryEntity;
 import tech.nocountry.c1832ftjavaangular.repository.CountryRepository;
@@ -19,11 +20,16 @@ public class CountryServiceImpl implements CountryService {
 
     @Override
     public Iterable<CountryEntity> getAllCountries() {
-        return null;
+        return repository.findAll();
     }
 
     @Override
     public Optional<CountryEntity> getCountry(int id) {
         return repository.findById(id);
+    }
+
+    @Override
+    public Iterable<CountryEntity> findAll(Example<CountryEntity> example) {
+        return repository.findAll(example);
     }
 }
