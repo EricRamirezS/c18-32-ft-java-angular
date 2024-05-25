@@ -3,6 +3,11 @@ on:
   push:
     branches:
       - Back-end
+
+env:
+  ENVIRONMENT_PLATFORM: qa
+  MAIL_KEY: ${{ secrets.MAIL_TOKEN }}
+
 jobs:
   deploy:
     name: Deploy app
