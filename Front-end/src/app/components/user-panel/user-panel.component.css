@@ -1,82 +1,119 @@
 .user-image {
-  width: 180px;
-  height: 180px;
+    width: 180px;
+    height: 180px;
 }
 
 .group-button {
-  background: #ffffff;
-  box-shadow: 5px 5px 24px #dbdbdb, -5px -5px 24px #ffffff;
+    background: #ffffff;
+    box-shadow: 5px 5px 24px #dbdbdb, -5px -5px 24px #ffffff;
 }
 
 .user-info {
-  padding: 30px 0 0 30px;
+    padding: 30px 0 0 30px;
 }
 
 .table-component {
-  overflow: auto;
-  width: 100%;
+    overflow: auto;
+    width: 100%;
 }
 
 .table-component table {
-  border: 1px solid #dededf;
-  width: 100%;
-  table-layout: fixed;
-  border-collapse: separate;
-  border-spacing: 0;
-  text-align: left;
-  background: #ffffff;
-  box-shadow: 7px 10px 33px #dbdbdb, -112px 35px 18px #ffffff;
+    border: 1px solid #dededf;
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: left;
+    background: #ffffff;
+    box-shadow: 7px 10px 33px #dbdbdb, -112px 35px 18px #ffffff;
 }
 
 .table-component th,
 .table-component td {
-  border: 1px solid #dededf;
-  background-color: #ffffff;
-  padding: 10px;
+    border: 1px solid #dededf;
+    background-color: #ffffff;
+    padding: 10px;
+}
+
+.property {
+    margin-top: 90px;
+}
+
+.bannertext1 {
+    font-size: 6rem !important;
+    padding-top: 120px !important;
+
+}
+.bannertext2 {
+    word-spacing: 10px;
+    font-size: 3rem;
+    padding-bottom: 120px !important;
 }
 
 /* Media query for large screens */
 @media (min-width: 991px) {
-  .create-group-modal-body.modal-body {
-    background-image: url('../../../assets/img/user-panel/create-group-img.png');
-    background-repeat: no-repeat;
-    height: 605px;
-    background-position: bottom;
-    background-size: cover;
-  }
+    .create-group-modal-body.modal-body {
+        background-image: url("../../../assets/img/user-panel/create-group-img.png");
+        background-repeat: no-repeat;
+        height: 605px;
+        background-position: bottom;
+        background-size: cover;
+    }
 }
 
 /* Media query for screens up to 769px */
 @media (max-width: 991px) {
-  .plans-section {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center;
-  }
+    .plans-section {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center;
+    }
 
-  .group-button {
-    width: 60%;
-  }
+    .group-button {
+        width: 60%;
+    }
 
-  .create-group-modal-body.modal-body {
-    padding: 10px 0px 30px 0px !important;
-    background-image: none;
-  }
+    .create-group-modal-body.modal-body {
+        padding: 10px 0px 30px 0px !important;
+        background-image: none;
+    }
 }
 
 /* Additional styles if needed for mid-range sizes (optional) */
 @media (min-width: 991px) {
-  .create-group-modal-dialog.modal-dialog {
-    max-width: 75%;
-  }
+    .create-group-modal-dialog.modal-dialog {
+        max-width: 75%;
+    }
 
-  .white-box {
-    padding: 60px 70px 60px 70px;
-    box-shadow: 38px -41px 77px #656565, 20px 0px 14px #000000;
-  }
+    .white-box {
+        padding: 60px 70px 60px 70px;
+        box-shadow: 38px -41px 77px #656565, 20px 0px 14px #000000;
+    }
 
-  .members-view {
-    height: 100px;
-  }
+    .members-view {
+        height: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+    .sections {
+        font-size: calc(1.3rem + 1.5vw);
+    }
+    .connect {
+        font-size: 1.3rem
+    }
+    .bannertext1 {
+        font-size: 1.5rem !important;
+        padding-left: 0px !important;
+        padding-top: 50px !important;
+
+    }
+    .bannertext2 {
+        word-spacing: 5px;
+        font-size: 0.65rem;
+        padding-left: 0px !important;
+        padding-bottom: 50px !important;
+
+    }
 }

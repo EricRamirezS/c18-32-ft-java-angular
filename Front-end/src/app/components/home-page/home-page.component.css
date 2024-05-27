@@ -31,14 +31,14 @@ span{
 }
 .home{
     /* background-image: url(../src/assets/img/home\ page.png) !important ; */
-    background-image: url(../../../assets/img/home\ page.png) !important ;
+    background-image: url(../../../assets/img/home-page/homepage.png) !important ;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     transform: translate(0px, -32px);
 }
 .plan {
-    background-image: url(../../../assets/img/plan\ your\ trip.png) !important ;
+    background-image: url(../../../assets/img/home-page/planyourtrip.png) !important ;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

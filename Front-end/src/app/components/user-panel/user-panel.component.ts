@@ -1,52 +1,66 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { TopVacationsComponent } from '../templates/top-vacations/top-vacations.component';
+import { OffersComponent } from '../templates/offers/offers.component';
+import { PropertyTypeComponent } from '../templates/property-type/property-type.component';
+import { TravelsCommunityComponent } from '../templates/travels-community/travels-community.component';
 
 @Component({
-  selector: 'app-user-panel',
-  standalone: true,
-  imports: [ReactiveFormsModule],
-  templateUrl: './user-panel.component.html',
-  styleUrl: './user-panel.component.css',
+    selector: 'app-user-panel',
+    standalone: true,
+    imports: [
+        ReactiveFormsModule,
+        TopVacationsComponent,
+        OffersComponent,
+        PropertyTypeComponent,
+        TravelsCommunityComponent,
+    ],
+    templateUrl: './user-panel.component.html',
+    styleUrl: './user-panel.component.css',
 })
 export class UserPanelComponent {
-  formEditUser: FormGroup;
-  user: any = { name: 'Antonia', age: '27', country: 'Uruguay' };
-  urlUserPhoto = "https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg"
-  isEditMode = false;
+    formEditUser: FormGroup;
+    user: any = { name: 'Antonia', age: '27', country: 'Uruguay' };
+    urlUserPhoto =
+        'https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg';
+    isEditMode = false;
 
-  constructor(private fb: FormBuilder) {
-    this.formEditUser = this.fb.group({
-      name: [''],
-      age: [''],
-      country: [''],
-    });
-    this.formEditUser.patchValue(this.user);
-  }
+    items= [1,2,3,4]
+    item2= [1,2]
 
-  onSelectFile(event:any){
-    if(event.target.files){
-      let reader = new FileReader();
-      reader.readAsDataURL(event.target.files[0])
-      reader.onload = (event:any) => {
-        this.urlUserPhoto = event.target.result;
-      }
+    constructor(private fb: FormBuilder) {
+        this.formEditUser = this.fb.group({
+            name: [''],
+            age: [''],
+            country: [''],
+        });
+        this.formEditUser.patchValue(this.user);
     }
-  }
 
-  enterEditMode() {
-    // Switch to edit mode
-    this.isEditMode = true;
-  }
+    onSelectFile(event: any) {
+        if (event.target.files) {
+            let reader = new FileReader();
+            reader.readAsDataURL(event.target.files[0]);
+            reader.onload = (event: any) => {
+                this.urlUserPhoto = event.target.result;
+            };
+        }
+    }
 
-  saveChanges() {
-    // Save changes and exit edit mode
-    // You can implement logic here to send updated user information to the server
-    this.isEditMode = false;
-  }
+    enterEditMode() {
+        // Switch to edit mode
+        this.isEditMode = true;
+    }
 
-  cancelEdit() {
-    // Cancel editing and return to view mode
-    // You can implement logic here to reset input fields if needed
-    this.isEditMode = false;
-  }
+    saveChanges() {
+        // Save changes and exit edit mode
+        // You can implement logic here to send updated user information to the server
+        this.isEditMode = false;
+    }
+
+    cancelEdit() {
+        // Cancel editing and return to view mode
+        // You can implement logic here to reset input fields if needed
+        this.isEditMode = false;
+    }
 }
