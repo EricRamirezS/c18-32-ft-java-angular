@@ -1,0 +1,23 @@
+
+.title-404{
+  font-size: 190px;
+
+}
+
+.info-text{
+  width: 356px;
+}
+
+.airplane{
+  width: 703px;
+}
+
+@media (max-width: 767px) {
+  .airplane{
+    width: 240px;
+  }
+
+  .title-404{
+    font-size: 95px
+  }
+}
