@@ -33,9 +33,9 @@ export class PlacesToVisitComponent implements OnInit {
 
       closeButtons.forEach(button => {
         button.addEventListener('click', () => {
-          const modal = button.closest('.modal');
+          const modal = button.closest('.modal') as HTMLElement;
           if (modal) {
-            modal.classList.remove('show'); // Agrega esta línea
+            modal.style.display = 'none'; 
           }
         });
       });
