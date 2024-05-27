@@ -36,23 +36,23 @@
 /* Fonts */
 
 .Blinker-Bold{
-  font-family: 'Blinker-Bold';
+  font-family: 'Blinker-Bold' !important;
 }
 
 .Blinker-Regular{
-  font-family: 'Blinker-Regular';
+  font-family: 'Blinker-Regular' !important;
 }
 
 .Heebo-Bold{
-  font-family: 'Heebo-Bold';
+  font-family: 'Heebo-Bold' !important;
 }
 
 .Heebo-Medium{
-  font-family: 'Heebo-Medium';
+  font-family: 'Heebo-Medium' !important;
 }
 
 .Heebo-Regular{
-  font-family: 'Heebo-Regular';
+  font-family: 'Heebo-Regular' !important;
 }
 
 /* Colors */
@@ -80,23 +80,23 @@
 /* Text Color */
 
 .text-main-blue{
-  color: var(--main-blue);
+  color: var(--main-blue) !important;
 }
 
 .text-main-grey{
-  color: var(--main-grey);
+  color: var(--main-grey) !important;
 }
 
 .text-black{
-  color: var(--black);
+  color: var(--black) !important;
 }
 
 .text-secondary-grey{
-  color: var(--secondary-grey);
+  color: var(--secondary-grey) !important;
 }
 
 .text-white{
-  color: var(--white);
+  color: var(--white) !important;
 }
 body {
     overflow-x: hidden;

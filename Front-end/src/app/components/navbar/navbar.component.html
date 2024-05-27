@@ -2,36 +2,45 @@
     <div class="container-fluid mx-5 mb-3 ">
 
         <div class="d-grid align-content-center">
-            <a class="navbar-brand text-main-blue Blinker-Bold align-content-center" routerLink="home-page"><h2 class="m-0">MyApp</h2></a>
+            <a class="navbar-brand text-main-blue Blinker-Bold align-content-center" routerLink="home-page">
+                <h2 class="m-0">MyApp</h2>
+            </a>
         </div>
-        <button class="btn navbar-toggler mt-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="btn navbar-toggler mt-2" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+            aria-label="Toggle navigation">
             <i class="fa-solid fa-bars"></i>
         </button>
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
-                <ul class="navbar-nav mt-2">
-                    <li class="nav-item align-content-center">
-                        <a class="nav-link active Heebo-Regular fs-6" aria-current="page" routerLink="home-page">Home</a>
-                    </li>
-                    <li class="nav-item align-content-center">
-                        <a class="nav-link Heebo-Regular fs-6 " routerLink="home-page">Stays</a>
-                    </li>
-                    <li class="nav-item align-content-center">
-                        <a class="nav-link Heebo-Regular fs-6 " routerLink="home-page">Flights</a>
-                    </li>
-                    <li class="nav-item align-content-center">
-                        <a class="nav-link Heebo-Regular fs-6 " type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" routerLink="home-page">Packages</a>
-                    </li>
-                    <li class="nav-item align-content-center">
-                        <a class="nav-link Heebo-Regular fs-6 " type="button" data-bs-toggle="modal" data-bs-target="#LoginModal">Login</a>
-                    </li>
-                    <li class="nav-item align-content-center">
-                        <a class="nav-link Heebo-Regular fs-6 myapp" type="button" data-bs-toggle="modal" data-bs-target="#SignUpModal">Sign Up</a>
-                    </li>
-                    <li class="nav-item align-content-center " type="button" routerLink="/user-panel">
-                        <img class="perfil p-2" src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg " alt="">
-                    </li>
-                </ul>
+            <ul class="navbar-nav mt-2">
+                <li class="nav-item align-content-center me-3">
+                    <a class="nav-link active Heebo-Regular fs-6" aria-current="page" routerLink="home-page">Home</a>
+                </li>
+                <li class="nav-item align-content-center me-3">
+                    <a class="nav-link Heebo-Regular fs-6 " routerLink="home-page">Stays</a>
+                </li>
+                <li class="nav-item align-content-center me-3">
+                    <a class="nav-link Heebo-Regular fs-6 " routerLink="home-page">Flights</a>
+                </li>
+                <li class="nav-item align-content-center me-3">
+                    <a class="nav-link Heebo-Regular fs-6 " type="button" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal" routerLink="home-page">Packages</a>
+                </li>
+                <li class="nav-item align-content-center me-3">
+                    <a class="nav-link Heebo-Regular fs-6 " type="button" data-bs-toggle="modal"
+                        data-bs-target="#LoginModal">Login</a>
+                </li>
+                <li class="nav-item align-content-center me-3">
+                    <a class="nav-link Heebo-Regular fs-6 myapp" type="button" data-bs-toggle="modal"
+                        data-bs-target="#SignUpModal">Sing Up</a>
+                </li>
+                <li class="nav-item align-content-center " type="button" routerLink="/user-panel">
+                    <img class="perfil p-2"
+                        src="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg "
+                        alt="">
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
@@ -45,35 +54,47 @@
             <div class="modal-header log h-100 border-0 ps-0 py-0 d-flex rounded-0">
                 <div class="bg-white h-100 mainbox">
                     <div class="mx-5 log2 h-100 align-content-center">
-                        <div class="mb-4 d-flex justify-content-center Heebo-Bold "><h1 class="myapp">MyApp</h1></div>
-                        <div class="d-flex justify-content-center mb-2 Heebo-Bold"> <h3>Login</h3></div>
-                        <p class="Heebo-Regular mb-4">Don’t have an account? <a type="button" data-bs-toggle="modal" data-bs-target="#SignUpModal" href="">SignUp for free</a></p>
+                        <div class="mb-4 d-flex justify-content-center Heebo-Bold ">
+                            <h1 class="myapp">MyApp</h1>
+                        </div>
+                        <div class="d-flex justify-content-center mb-2 Heebo-Bold">
+                            <h3>Login</h3>
+                        </div>
+                        <p class="Heebo-Regular mb-4">Don’t have an account? <a type="button" data-bs-toggle="modal"
+                                data-bs-target="#SignUpModal" href="">SignUp for free</a></p>
                         <div class="mb-3 Heebo-Regular">
                             <label for="basic-url" class="form-label text-black">Email Address</label>
                             <div class="input-group">
-                                <input type="text" class="form-control radius" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+                                <input type="text" class="form-control radius" id="basic-url"
+                                    aria-describedby="basic-addon3 basic-addon4">
                             </div>
                         </div>
                         <div class="mb-3 Heebo-Regular">
                             <label for="basic-url" class="form-label">Password</label>
                             <div class="input-group">
-                                <input type="password" class="form-control radius" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+                                <input type="password" class="form-control radius" id="basic-url"
+                                    aria-describedby="basic-addon3 basic-addon4">
                             </div>
                         </div>
                         <div class="form-check m-3 ms-0 Heebo-Regular">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                             <label class="form-check-label" for="flexCheckDefault">
-                              Remember me
+                                Remember me
                             </label>
                         </div>
                         <div class="mb-3 d-flex justify-content-center">
                             <button class="btn btn-primary Heebo-Bold text-white w-100">Log in</button>
                         </div>
-                        <p class="d-flex justify-content-center Heebo-Regular"><a href="">Forgot Your Password?</a></p>
+                        <div class="d-flex justify-content-center Heebo-Regular" data-bs-toggle="modal"
+                            data-bs-target="#forgotPasswordForm">
+                            <p class="text-main-blue text-decoration-underline forgot-pass-link">Forgot Your Password?
+                            </p>
+                        </div>
                         <p class="d-flex justify-content-center">Copyright © 2024. MyApp.</p>
                     </div>
                 </div>
-                <button type="button" class="btn-close btn-close-white cerrarModal" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white cerrarModal" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
             </div>
 
         </div>
@@ -90,34 +111,42 @@
                 <h2 class="text-white logoSignup">MyApp</h2>
                 <div class=" bg-white box h-75 ">
                     <div class="mx-5 h-100 align-content-center">
-                        <div class="d-flex justify-content-center mt-2 Heebo-Bold"> <h3>Signup</h3></div>
+                        <div class="d-flex justify-content-center mt-2 Heebo-Bold">
+                            <h3>Signup</h3>
+                        </div>
                         <div class="mb-3 Heebo-Regular">
                             <label for="basic-url" class="form-label text-black">Email Address</label>
                             <div class="input-group">
-                                <input type="text" class="form-control radius" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+                                <input type="text" class="form-control radius" id="basic-url"
+                                    aria-describedby="basic-addon3 basic-addon4">
                             </div>
                         </div>
                         <div class="mb-3 Heebo-Regular">
                             <label for="basic-url" class="form-label text-black">Username</label>
                             <div class="input-group">
-                                <input type="text" class="form-control radius" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+                                <input type="text" class="form-control radius" id="basic-url"
+                                    aria-describedby="basic-addon3 basic-addon4">
                             </div>
                         </div>
                         <div class="mb-5 Heebo-Regular">
                             <label for="basic-url" class="form-label">Password</label>
                             <div class="input-group">
-                                <input type="password" class="form-control radius" id="basic-url" aria-describedby="basic-addon3 basic-addon4">
+                                <input type="password" class="form-control radius" id="basic-url"
+                                    aria-describedby="basic-addon3 basic-addon4">
                             </div>
                         </div>
 
                         <div class="mb-3 d-flex justify-content-center">
                             <button class="btn btn-primary Heebo-Bold text-white w-100">Signup</button>
                         </div>
-                        <p class="d-flex justify-content-center Heebo-Regular "> Already have an account? <a type="button" class="ms-1" data-bs-toggle="modal" data-bs-target="#LoginModal"> Log in</a></p>
+                        <p class="d-flex justify-content-center Heebo-Regular "> Already have an account? <a
+                                type="button" class="ms-1" data-bs-toggle="modal" data-bs-target="#LoginModal"> Log
+                                in</a></p>
                     </div>
                 </div>
                 <p class="copyright d-flex justify-content-center text-white">Copyright © 2024. MyApp.</p>
-                <button type="button" class="btn-close btn-close-white cerrarModal " data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-close-white cerrarModal " data-bs-dismiss="modal"
+                    aria-label="Close"></button>
             </div>
             <!-- <div class="modal-body">
             </div> -->
@@ -125,4 +154,42 @@
     </div>
 </div>
 
-
+<!------------------------------------ #forgotPasswordForm modal ----------------------------------------------------->
+<div class="modal fade" id="forgotPasswordForm" tabindex="-1" aria-labelledby="editPhotoLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="d-flex justify-content-end p-3">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column align-items-center pt-0 forgot-pass-modal-body">
+                <h1 class="Heebo-Bold text-main-blue mb-4">My App.</h1>
+                <img src="../../../assets/img/navbar/forgot-pass.png" alt="forgot-password"
+                    class="img-forgot-pass mb-4">
+                <h3 class="Heebo-Bold">Forgot Password?</h3>
+                <p class="Heebo-Regular">You can reset your password here</p>
+                <form [formGroup]="formForgotPass" (Submit)="submitFormForgotPass()" class="mb-5 d-flex flex-column form-reset-pass">
+                    <div class="input-group">
+                        <span
+                            class="input-group-text d-flex align-items-center rounded-start-pill secondary-grey text-center"
+                            id="basic-addon1"><i class="fa-solid fa-at text-main-grey"></i></span>
+                        <input type="email" class="form-control rounded-end-pill py-2" placeholder="Email address"
+                            aria-label="email" aria-describedby="basic-addon1" formControlName="email">
+                    </div>
+                    @if (formForgotPass.get('email')?.hasError('required')&&
+                    formForgotPass.get('email')?.touched) {
+                    <div class="text-danger mt-1"><i class="fa-solid fa-circle-exclamation"></i> Email is required</div>
+                    }
+                    @if (formForgotPass.get('email')?.hasError('pattern')&&
+                    formForgotPass.get('email')?.touched) {
+                    <div class="text-danger mt-1"><i class="fa-solid fa-circle-exclamation"></i> Please enter a valid
+                        email</div>
+                    }
+                    <button
+                        class="Heebo-Bold main-blue text-white fs-4 rounded-pill border-0 py-1 mt-3">Reset
+                        password</button>
+                </form>
+                <p class="Heebo-Regular text-main-grey">Copyright © 2024. MyApp.</p>
+            </div>
+        </div>
+    </div>
+</div>
