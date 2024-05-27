@@ -1,1 +1,88 @@
-<p>home-page works!</p>
+<section class=" home">
+    <div class="container mainbox">
+        <div class="Heebo-Bold text-white pt-5">
+            <h1 class="awaits">The whole world <br> awaits.</h1>
+        </div>
+        <div>
+            <form class="d-flex" role="search">
+                <input class="form-control Heebo-Regular" type="search" placeholder=" Search destinations, hotels" aria-label="Search" aria-describedby="basic-addon1">
+                <span class="input-group-text " id="basic-addon1">
+                    <button class="btn btn-outline-white bg-white search Heebo-Bold px-5 rounded-5" type="submit">Search</button>
+                </span>
+            </form>
+        </div>
+    </div>
+</section>
+
+<main class="mx-5">
+    <!--------------------------------------- Top Vacation Destinations ----------------------------------------->
+
+    <div class="Heebo-Bold mx-4 mb-5 mt-3">
+        <h1  class="sections">Top Vacation Destinations</h1>
+    </div>
+    <section class="row topVacations" >
+        @for (item of items; track $index) {
+            <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center topVacations">
+                <app-top-vacations >
+
+                </app-top-vacations>
+            </div>
+        }
+    </section>
+<!---------------------------------------------------- Offers -------------------------------------------------->
+
+    <div>
+        <div class="Heebo-Bold mx-4 mb-5 mt-3">
+            <h1 class="sections">Offers</h1>
+        </div>
+    </div>
+    <section class="row">
+        @for (item of item2; track $index) {
+            <div class="col-md-6 col-lg-6  ">
+                <app-offers>
+
+                </app-offers>
+            </div>
+        }
+    </section>
+<!-------------------------------------------- Browse by property type ------------------------------------------>
+
+    <div class="property">
+        <div class="Heebo-Bold mx-4 mb-5 mt-3 ">
+            <h1 class="sections">Browse by property type</h1>
+        </div>
+    </div>
+    <section class="row topVacations" >
+        @for (item of items; track $index) {
+            <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center topVacations">
+                <app-property-type >
+
+                </app-property-type>
+            </div>
+        }
+    </section>
+
+<!------------------------------------------------- Plan your trip --------------------------------------------->
+
+<section class="mt-5">
+    <div class="plan text-white">
+        <h1 class="bannertext1 ms-5 mt-0 px-5 pt-5 Heebo-Bold ">Plan your trip with travel <br> expert</h1>
+        <h3 class="Blinker-Regular bannertext2  ms-5 px-5 ">Our professional advisors can craft your perfect itinerary</h3>
+    </div>
+</section>
+
+<!------------------------------------------- Travelers in our community --------------------------------------->
+
+<div class="Heebo-Bold mx-4 mb-5 mt-3 pt-5">
+    <h1  class="connect">Connect with other travelers in our community</h1>
+</div>
+<section class="row topVacations" >
+    @for (item of items; track $index) {
+        <div class="col-md-6 col-lg-4 col-xl-3 d-flex justify-content-center topVacations">
+            <app-travels-community >
+
+            </app-travels-community>
+        </div>
+    }
+</section>
+</main>
