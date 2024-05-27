@@ -74,4 +74,19 @@ span{
         transform: translate(149px);
 
     }
+
 }
+@media(max-width:993px) {
+    .imgDownload{
+        transform: translate(-20px, -46px);
+
+    }
+}
+@media(max-width:930px) {
+    .imgDownload{
+        display: none;
+    }
+}
+/* @media(max-width:) {
+
+} */

@@ -1,0 +1,52 @@
+img{
+    border-bottom-left-radius:0px !important;
+    border-top-left-radius:  0px !important;
+    border-radius: 19.45px !important;
+}
+button{
+    border-radius: 29.66px;
+    background-color: #2571f2;
+}
+.mainbox {
+    border-radius: 14.83px;
+}
+.card {
+    box-shadow:  19px 19px 25px #bababa,
+    -19px -19px 25px #ffffff;
+}
+@media (max-width: 600px) {
+    .col-sm-6{
+        display: flex
+    }
+    .fs-2 {
+        font-size: calc(.7rem + .9vw) !important;
+        margin-bottom: 0px;
+    }
+    .fs-4 {
+        font-size: calc(1.275rem + .3vw) !important;
+        margin-bottom: 4px !important;
+
+    }
+    .card-title {
+        font-size: .7rem;
+        margin-bottom: 4px;
+    }
+    .ms-4 {
+        margin-left: -1.5rem !important;
+    }
+    .small, small {
+        font-size: .7rem;
+    }
+    button{
+        margin-top: 1px !important;
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        padding-top: 4px !important;
+        padding-bottom: 4px !important;
+
+    }
+    .img-fluid {
+        max-width: 85%;
+        height: 80%;
+    }
+}
