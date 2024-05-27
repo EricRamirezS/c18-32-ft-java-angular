@@ -94,7 +94,9 @@
         height: 594px;
     }
     .log2{
-        transform: translate(58px, 2px);
+        transform: translate(12px, 2px);
+        width: 387px;
+
 
     }
     .mainbox{
@@ -108,8 +110,16 @@
     }
     .singup{
         background-image: none !important;
+        width: 455px;
+        height: 594px;
     }
-
+    .box{
+        transform: translate(-120px, 2px);
+        border-radius: 0px;
+        width: 453px;
+        height: 554px;
+        margin-left: 0px
+    }
     .forgot-pass-modal-body{
         padding: 0px 30px 0px 30px !important;
     }
@@ -117,4 +127,5 @@
     .img-forgot-pass{
         width: 170px;
     }
+
 }
