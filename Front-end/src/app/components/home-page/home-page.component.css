@@ -72,6 +72,9 @@ span{
     .sections{
         font-size: calc(1.3rem + 1.5vw);
     }
+    .connect {
+        font-size: 1.3rem
+    }
     .bannertext1 {
         font-size: 1.5rem !important;
         padding-left: 0px !important;

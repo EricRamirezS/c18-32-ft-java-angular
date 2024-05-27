@@ -1,0 +1,20 @@
+
+
+@media (max-width: 600px) {
+    .card-text{
+        font-size: 38px !important;
+    }
+
+    .talk{
+        font-size: 41px !important;
+        margin-top: -11px;
+    }
+    .travel {
+        font-size: 20px !important;
+        margin-top: -6px !important;
+    }
+    .travelers {
+        font-size: 17px !important;
+        margin-top: 0px;
+    }
+}
