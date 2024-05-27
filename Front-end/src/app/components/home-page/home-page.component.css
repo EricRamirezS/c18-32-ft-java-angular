@@ -1,0 +1,95 @@
+input{
+    border-radius: 15.8px;
+    border-bottom-right-radius: 0px;
+    border-top-right-radius: 0px;
+    height: 54px;
+    width: 540px;
+    background-color: #ffffff80;
+    backdrop-filter: blur(10px) brightness(0.8);
+    border-right: transparent;
+
+}
+input::placeholder {
+    color: grey;
+    font-size: 14px;
+    padding-left: 15px;
+}
+
+span{
+    border-radius: 15.8px;
+    border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+    border-left: transparent;
+    background-color: #ffffff80;
+    backdrop-filter: blur(10px) brightness(0.8);
+}
+.search{
+    color: var(--main-blue);
+}
+.awaits{
+    font-size: 5.5rem;
+}
+.home{
+    /* background-image: url(../src/assets/img/home\ page.png) !important ; */
+    background-image: url(../../../assets/img/home\ page.png) !important ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transform: translate(0px, -32px);
+}
+.plan {
+    background-image: url(../../../assets/img/plan\ your\ trip.png) !important ;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 27px;
+}
+.bannertext1 {
+    font-size: 6rem !important;
+    padding-top: 120px !important;
+
+}
+.bannertext2 {
+    word-spacing: 10px;
+    font-size: 3rem;
+    padding-bottom: 120px !important;
+}
+.mainbox {
+    padding-top: 10rem ;
+    padding-bottom: 10rem ;
+}
+.property {
+    margin-top: 90px;
+}
+@media(max-width: 600px) {
+    .awaits{
+        font-size: 3.5rem;
+    }
+    .mainbox {
+        padding-top: 5rem ;
+        padding-bottom: 5rem ;
+    }
+    .sections{
+        font-size: calc(1.3rem + 1.5vw);
+    }
+    .bannertext1 {
+        font-size: 1.5rem !important;
+        padding-left: 0px !important;
+        padding-top: 50px !important;
+
+    }
+    .bannertext2 {
+        word-spacing: 5px;
+        font-size: 0.65rem;
+        padding-left: 0px !important;
+        padding-bottom: 50px !important;
+
+    }
+    .plan {
+        border-radius: 20px;
+    }
+    /* span{
+        border-left: transparent !important;
+    } */
+
+}
