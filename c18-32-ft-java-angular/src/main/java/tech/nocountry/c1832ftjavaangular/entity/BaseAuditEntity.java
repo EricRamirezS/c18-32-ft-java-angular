@@ -1,5 +1,6 @@
 package tech.nocountry.c1832ftjavaangular.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,14 +25,16 @@ public abstract class BaseAuditEntity implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Long id;
 
     @CreationTimestamp
     @Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
+    @JsonIgnore
     private OffsetDateTime createdAt;
 
     @UpdateTimestamp
     @Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
+    @JsonIgnore
     private OffsetDateTime updatedAt;
 
 }

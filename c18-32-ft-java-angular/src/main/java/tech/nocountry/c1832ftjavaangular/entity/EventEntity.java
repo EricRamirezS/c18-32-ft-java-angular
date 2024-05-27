@@ -14,7 +14,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.locationtech.jts.geom.Geometry;
-import tech.nocountry.c1832ftjavaangular.model.EventType;
+import tech.nocountry.c1832ftjavaangular.model.event.EventType;
 
 import java.time.OffsetDateTime;
 import java.util.List;

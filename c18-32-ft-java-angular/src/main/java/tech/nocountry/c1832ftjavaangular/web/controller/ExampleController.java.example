@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 import tech.nocountry.c1832ftjavaangular.entity.TestEntity;
-import tech.nocountry.c1832ftjavaangular.model.StringResponse;
+import tech.nocountry.c1832ftjavaangular.utils.StringResponse;
 import tech.nocountry.c1832ftjavaangular.repository.TestEntityRepository;
 import tech.nocountry.c1832ftjavaangular.service.EmailService;
 

@@ -1,10 +1,10 @@
-package tech.nocountry.c1832ftjavaangular.model;
+package tech.nocountry.c1832ftjavaangular.utils;
 
 import lombok.Data;
 
 @Data
 public class StringResponse {
-    private String message;
+    private final String message;
 
     public StringResponse(String message, Object... args) {
         this.message = String.format(message, args);

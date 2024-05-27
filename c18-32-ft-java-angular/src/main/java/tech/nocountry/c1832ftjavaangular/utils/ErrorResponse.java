@@ -1,4 +1,4 @@
-package tech.nocountry.c1832ftjavaangular.model;
+package tech.nocountry.c1832ftjavaangular.utils;
 
 import lombok.Getter;
 

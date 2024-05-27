@@ -7,7 +7,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.http.HttpStatus;
@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 import tech.nocountry.c1832ftjavaangular.entity.CountryEntity;
-import tech.nocountry.c1832ftjavaangular.model.ErrorResponse;
+import tech.nocountry.c1832ftjavaangular.utils.ErrorResponse;
 import tech.nocountry.c1832ftjavaangular.service.CountryService;
 
 import java.util.Optional;
@@ -27,25 +27,20 @@ import java.util.Optional;
 @Tag(name = "Countries", description = "Get information about countries.")
 @RestController
 @RequestMapping("/countries")
+@RequiredArgsConstructor
 public class CountryController {
 
     private final CountryService service;
-    private final ExampleMatcher allMatcher;
-    private final ExampleMatcher anyMatcher;
+    private final ExampleMatcher allMatcher = ExampleMatcher.matchingAll().withIgnoreNullValues();
+    private final ExampleMatcher anyMatcher = ExampleMatcher.matchingAny()
+            .withMatcher("iso", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
+            .withMatcher("name", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
+            .withMatcher("niceName", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
+            .withMatcher("iso3", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
+            .withMatcher("numericCode", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
+            .withMatcher("phoneCode", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
+            .withIgnoreNullValues();
 
-    @Autowired
-    protected CountryController(CountryService service) {
-        this.service = service;
-        allMatcher = ExampleMatcher.matchingAll().withIgnoreNullValues();
-        anyMatcher = ExampleMatcher.matchingAny()
-                .withMatcher("iso", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
-                .withMatcher("name", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
-                .withMatcher("niceName", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
-                .withMatcher("iso3", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
-                .withMatcher("numericCode", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
-                .withMatcher("phoneCode", ExampleMatcher.GenericPropertyMatchers.contains().ignoreCase())
-                .withIgnoreNullValues();
-    }
 
     @Operation(summary = "Get a list of values", description = "Get a list of values")
     @ApiResponses({

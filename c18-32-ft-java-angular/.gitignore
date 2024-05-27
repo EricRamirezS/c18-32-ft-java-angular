@@ -37,3 +37,6 @@ build/
 /target/classes/application-dev.properties
 /target/classes/application.properties
 /target/classes/application-qa.properties
+/target/test-classes/application.properties
+/src/test/resources/template/EmailTemplate.html
+/target/test-classes/template/EmailTemplate.html
