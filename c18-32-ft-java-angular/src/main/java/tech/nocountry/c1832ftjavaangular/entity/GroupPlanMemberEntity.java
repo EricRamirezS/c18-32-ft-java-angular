@@ -13,7 +13,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import tech.nocountry.c1832ftjavaangular.model.InviteStatus;
+import tech.nocountry.c1832ftjavaangular.model.plan.InviteStatus;
 
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -32,6 +32,9 @@ public class GroupPlanMemberEntity extends BaseAuditEntity {
     private String inviteToken;
     @Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")
     private OffsetDateTime expirationDate;
+
+    @NotNull
+    private Boolean isProposerMember;
 
     @ManyToOne
     private UserAccountEntity userAccount;

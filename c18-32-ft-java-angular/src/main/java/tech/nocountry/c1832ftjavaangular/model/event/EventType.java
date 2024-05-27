@@ -1,4 +1,4 @@
-package tech.nocountry.c1832ftjavaangular.model;
+package tech.nocountry.c1832ftjavaangular.model.event;
 
 public enum EventType {
     PLACE,

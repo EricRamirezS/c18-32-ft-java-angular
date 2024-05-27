@@ -9,7 +9,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import tech.nocountry.c1832ftjavaangular.model.VoteType;
+import tech.nocountry.c1832ftjavaangular.model.vote.VoteType;
 
 @Getter
 @Setter

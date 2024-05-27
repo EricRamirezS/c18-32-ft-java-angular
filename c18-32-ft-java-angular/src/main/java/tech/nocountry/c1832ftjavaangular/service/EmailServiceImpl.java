@@ -4,12 +4,13 @@ import com.mailersend.sdk.MailerSend;
 import com.mailersend.sdk.Recipient;
 import com.mailersend.sdk.emails.Email;
 import com.mailersend.sdk.exceptions.MailerSendException;
+import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
+import tech.nocountry.c1832ftjavaangular.properties.EmailProperties;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -19,20 +20,13 @@ import java.util.Collection;
  * Service class for sending emails using the MailerSend SDK.
  */
 @Service()
+@RequiredArgsConstructor
 public class EmailServiceImpl implements EmailService {
 
-    @Value("${mailersend.api.key}")
-    private String apiKey;
+    private final EmailProperties emailProperties;
     private final ResourceLoader resourceLoader;
 
     Logger logger = LoggerFactory.getLogger(EmailService.class);
-
-    /**
-     * Constructs a new EmailService with the provided ResourceLoader.
-     *
-     * @param resourceLoader the ResourceLoader to load email templates
-     */
-    public EmailServiceImpl(ResourceLoader resourceLoader) {this.resourceLoader = resourceLoader;}
 
     /**
      * Sends an email to the specified recipients with the given subject and content.
@@ -63,8 +57,7 @@ public class EmailServiceImpl implements EmailService {
 
         MailerSend ms = new MailerSend();
 
-        System.out.println(apiKey);
-        ms.setToken(apiKey);
+        ms.setToken(emailProperties.getKey());
         try {
             ms.emails().send(email);
             logger.info("Email sent successfully with subject {}", subject);
