@@ -130,3 +130,70 @@
     }
 
 }
+
+@media (max-width: 414px) {
+    .px-sm-0 {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+    .cerrarModal {
+        margin-bottom: 532px;
+    }
+    .log   {
+        width: auto;
+        height: 594px;
+    }
+    .log2{
+        transform: translate(34px, 2px);
+        width: 332px;
+        margin-right: 0px !important;
+        margin-left: 0px !important;
+
+    }
+    .mainbox{
+        border-bottom-right-radius: 0px;
+        border-top-right-radius: 0px;
+        width:400px;
+    }
+    .login{
+        background-image: none !important;
+        border-radius: 0%;
+        width: 414px;
+
+    }
+    .signup{
+        background-image: none !important;
+        width: 414px;
+        height: 594px;
+    }
+    .box{
+        transform: translate(-3px, 2px);
+        border-radius: 0px;
+        width: auto;
+        height: 554px;
+        margin-left: 0px
+    }
+    .modal-header.h-100.border-0.ps-0.py-0.rounded-0.d-flex.justify-content-center{
+        padding: 0px !important;
+        width: 395px;
+    }
+    .logoSignup{
+        transform: translate(210px, -237px);
+        width: 120px;
+        color: var(--main-blue) !important;
+    }
+
+
+    .mx-5.h-100.align-content-center {
+        width: 360px;
+        margin: 0px !important;
+    }
+
+    .forgot-pass-modal-body{
+        padding: 0px 30px 0px 30px !important;
+    }
+
+    .img-forgot-pass{
+        width: 170px;
+    }
+}

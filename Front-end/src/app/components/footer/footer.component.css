@@ -25,6 +25,7 @@
     color: #808080;
     transform: translate(480px);
     font-size: 9px;
+    width: 50px;
 
 }
 .download{
@@ -74,6 +75,9 @@ span{
         transform: translate(149px);
 
     }
+    .row .d-flex-justify-content-center {
+        width: 413px !important;
+    }
 
 }
 @media(max-width:993px) {
@@ -87,6 +91,15 @@ span{
         display: none;
     }
 }
-/* @media(max-width:) {
+@media(max-width: 320px) {
+    .mainbox {
+        width: 320px !important;
+    }
+}
+@media (max-width: 414px) {
 
-} */
+    .mainbox {
+        width: 413px !important;
+    }
+
+}

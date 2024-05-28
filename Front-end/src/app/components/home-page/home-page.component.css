@@ -1,18 +1,25 @@
+main {
+    overflow: hidden;
+}
 input{
     border-radius: 15.8px;
     border-bottom-right-radius: 0px;
     border-top-right-radius: 0px;
     height: 54px;
-    width: 540px;
+    width: 50%px;
     background-color: #ffffff80;
     backdrop-filter: blur(10px) brightness(0.8);
     border-right: transparent;
 
 }
+.form-control {
+    width: 50% !important;
+}
 input::placeholder {
     color: grey;
     font-size: 14px;
     padding-left: 15px;
+    overflow-x: hidden;
 }
 
 span{
@@ -91,8 +98,68 @@ span{
     .plan {
         border-radius: 20px;
     }
-    /* span{
-        border-left: transparent !important;
-    } */
+
+}
+@media(max-width: 414px ) {
+    main {
+        margin-left: .5rem !important;
+        margin-right: .5rem !important;
+    }
+    .awaits{
+        font-size: 2.5rem;
+    }
+    .mainbox {
+        padding-top: 5rem ;
+        padding-bottom: 3.5rem ;
+        padding-left: 1.5rem ;
+        /* padding-right: 3.5rem ; */
+    }
+    .Heebo-Bold.text-white.pt-5 {
+        padding-top: 0px !important;
+    }
+    .Heebo-Bold.mx-4.mb-5.mt-3 {
+        margin-left: 1.5rem !important;
+        margin-bottom: 24px !important;
+        margin-top: 0px !important;
+    }
+    .sections{
+        font-size: calc(1rem + 1.5vw);
+    }
+    .connect {
+        font-size: 1.3rem
+    }
+    .plan {
+        border-radius: 20px;
+    }
+    section.mt-5 {
+        margin-top: 0px !important;
+    }
+    h1.bannertext1.ms-5.mt-0.px-5.pt-5.Heebo-Bold {
+        font-size: 1.5rem !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-top: 0px !important;
+        margin-left: 0rem !important;
+    }
+    h3.bannertext2 {
+        word-spacing: 5px;
+        font-size: 0.65rem;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+        padding-bottom: 0px !important;
+        margin-left: 0rem !important;
+
+    }
+
+    .topVacations1 {
+        height: 200px !important;
+        margin-bottom: 20px !important;
+    }
+    .topVacations {
+        height: 267px !important;
+        margin-bottom: 0px !important;
+    }
+
+
 
 }
