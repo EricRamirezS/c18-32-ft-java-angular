@@ -18,3 +18,29 @@
         margin-top: 0px;
     }
 }
+
+@media (max-width: 414px) {
+    .card-text{
+        font-size: 38px !important;
+    }
+
+    .talk{
+        font-size: 20px !important;
+        margin-top: -21px;
+        font-weight: normal !important;
+    }
+    .travel {
+        font-size: 11px !important;
+        margin-top: -6px !important;
+    }
+    .travelers {
+        font-size: 10px !important;
+        margin-top: 0px;
+    }
+    .card-body {
+        padding-bottom: 8px !important;
+    }
+    .card.w-100.rounded-4.mb-5 {
+        margin-bottom: 1.5rem !important;
+    }
+}

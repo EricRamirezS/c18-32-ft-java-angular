@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg bar sticky-top">
-    <div class="container-fluid mx-5 mb-3 ">
+<nav class="navbar navbar-expand-md  bar sticky-top">
+    <div class="container-fluid mx-5 mb-3 px-sm-0">
 
         <div class="d-grid align-content-center">
             <a class="navbar-brand text-main-blue Blinker-Bold align-content-center" routerLink="/">
@@ -60,7 +60,7 @@
                         <div class="d-flex justify-content-center mb-2 Heebo-Bold">
                             <h3>Login</h3>
                         </div>
-                        <p class="Heebo-Regular mb-4">Don’t have an account? <a type="button" data-bs-toggle="modal"
+                        <p class="Heebo-Regular mb-4 d-flex justify-content-center">Don’t have an account? <a type="button" data-bs-toggle="modal"
                                 data-bs-target="#SignUpModal" href="">SignUp for free</a></p>
                         <div class="mb-3 Heebo-Regular">
                             <label for="basic-url" class="form-label text-black">Email Address</label>
@@ -93,14 +93,13 @@
                         <p class="d-flex justify-content-center">Copyright © 2024. MyApp.</p>
                     </div>
                 </div>
-                <button type="button" class="btn-close btn-close-white cerrarModal" data-bs-dismiss="modal"
+                <button type="button" class="btn-close btn-close cerrarModalLogin" data-bs-dismiss="modal"
                     aria-label="Close"></button>
             </div>
 
         </div>
     </div>
 </div>
-
 
 <!------------------------------------ Sign Up modal ----------------------------------------------------->
 
@@ -145,8 +144,9 @@
                     </div>
                 </div>
                 <p class="copyright d-flex justify-content-center text-white">Copyright © 2024. MyApp.</p>
-                <button type="button" class="btn-close btn-close-white cerrarModal " data-bs-dismiss="modal"
-                    aria-label="Close"></button>
+                <button type="button" class="btn-close cerrarModalSignup" data-bs-dismiss="modal"
+                    aria-label="Close">
+                </button>
             </div>
             <!-- <div class="modal-body">
             </div> -->
