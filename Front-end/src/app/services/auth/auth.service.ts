@@ -44,19 +44,14 @@ export class AuthService {
         );
     }
 
-    sendEmailPasswordRecovery(data: {
-        email: string;
-        callbackUrl: string;
-        redirectUrl: string;
-    }): Observable<{ message: string }> {
-        const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-        return this.http.post<{ message: string }>(
-            `${this.apiUrl}/auth/recovery`,
-            data,
-            {
-                headers,
-            }
-        );
+    sendEmailPasswordRecovery(data: any): Observable<any> {
+        // Assuming you need to pass an authorization token
+        const token = sessionStorage.getItem('accessToken');
+        const headers = new HttpHeaders({
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`
+        });
+        return this.http.post(`${this.apiUrl}/auth/recovery`, data, { headers });
     }
 
     changePassword(
