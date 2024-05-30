@@ -167,7 +167,7 @@
                     class="img-forgot-pass mb-4">
                 <h3 class="Heebo-Bold">Forgot Password?</h3>
                 <p class="Heebo-Regular">You can reset your password here</p>
-                <form [formGroup]="formForgotPass" (Submit)="submitFormForgotPass()" class="mb-5 d-flex flex-column form-reset-pass">
+                <form [formGroup]="formForgotPass" (submit)="submitFormForgotPass()" class="mb-5 d-flex flex-column form-reset-pass">
                     <div class="input-group">
                         <span
                             class="input-group-text d-flex align-items-center rounded-start-pill secondary-grey text-center"
@@ -184,7 +184,7 @@
                     <div class="text-danger mt-1"><i class="fa-solid fa-circle-exclamation"></i> Please enter a valid
                         email</div>
                     }
-                    <button
+                    <button type="submit"
                         class="Heebo-Bold main-blue text-white fs-4 rounded-pill border-0 py-1 mt-3">Reset
                         password</button>
                 </form>

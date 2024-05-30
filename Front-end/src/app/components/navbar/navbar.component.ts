@@ -20,12 +20,6 @@ export class NavbarComponent {
     emailRegex =
         /[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{2,5}/;
 
-    emailData = {
-        email: '',
-        callbackUrl: 'http://your-app-url.com/callback', // specify the callback URL here
-        redirectUrl: 'http://your-app-url.com/redirect', // specify the redirect URL here
-    };
-
     constructor(
         private fb: FormBuilder,
         private router: Router,
@@ -40,17 +34,28 @@ export class NavbarComponent {
     }
 
     submitFormForgotPass() {
-        this.authService.sendEmailPasswordRecovery(this.emailData).subscribe(
-            (response) => {
-                console.log('Email sent successfully', response);
-                // Handle success, e.g., display a message or navigate to another page
-                alert(response.message);
-                this.router.navigate(['/']);
-            },
-            (error) => {
-                console.log('Email sending failed', error);
-                // Handle error
-            }
-        );
+        if (this.formForgotPass.valid) {
+            const emailData = {
+                email: this.formForgotPass.get('email')?.value,
+                callbackUrl: 'https://c18-32-ft-java-angular-front-end.vercel.app/reset-password', // specify the callback URL here
+                redirectUrl: 'https://c18-32-ft-java-angular-front-end.vercel.app/', // specify the redirect URL here
+            };
+
+            this.authService.sendEmailPasswordRecovery(emailData).subscribe(
+                (response) => {
+                    console.log('Email sent successfully', response);
+                    // Handle success, e.g., display a message or navigate to another page
+                    alert(response.message);
+                    this.router.navigate(['/']);
+                },
+                (error) => {
+                    console.log('Email sending failed', error);
+                    // Handle error
+                    alert('Failed to send email. Please try again later.');
+                }
+            );
+        } else {
+            console.error('Form is invalid');
+        }
     }
 }

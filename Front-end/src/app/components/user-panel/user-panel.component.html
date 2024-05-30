@@ -1,158 +1,166 @@
 <main class="container mt-5">
-  <section class="mb-5">
-    <div class="d-flex flex-column">
-      <div class="d-flex justify-content-around justify-content-lg-between align-items-center">
-        <h1 class="text-main-blue Heebo-Bold fw-bold m-0">Your Profile.</h1>
-        <div class="d-flex">
-          <button type="button"
-            class="d-none d-lg-block btn group-button rounded-pill border-0 Heebo-Medium me-4 py-1 px-4"
-            data-bs-toggle="modal" data-bs-target="#crateGroup"><i
-              class="fa-solid fa-users-line me-1 text-main-blue"></i> Create new group plan</button>
-          <button type="button" class="btn text-main-blue"><i class="fa-solid fa-user-pen"
-              (click)="enterEditMode()"></i></button>
-        </div>
-      </div>
-      <div class="Heebo-Regular text-main-grey d-flex align-items-center user-info fs-5">
-        <form [formGroup]="formEditUser" (submit)="saveChanges()" class="d-flex align-items-center">
-          <!-- add modal -->
-          <button type="button" class="rounded-circle user-image me-3 me-lg-5 p-0 border-0" data-bs-toggle="modal"
-            data-bs-target="#editPhotoModal">
-            <img class="rounded-circle user-image me-3 me-lg-5"
-              src="https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg"
-              alt="user-profile-photo">
-          </button>
-
-          @if (!isEditMode) {
-          <div>
-            <p>{{user.name}}</p>
-            <p>{{user.age}}</p>
-            <p>{{user.country}}</p>
-          </div>
-          }
-          @if (isEditMode) {
-          <div>
-            <!-- Editable input fields -->
-            <div class="d-flex flex-column">
-              <input type="text" formControlName="name" class="mb-2 form-control" [value]="user.name">
-              <input type="text" formControlName="age" class="mb-2 form-control" [value]="user.age">
-              <input type="text" formControlName="country" class="mb-3 form-control" [value]="user.country">
-              <div>
-                <!-- Button to save changes and exit edit mode -->
-                <button type="submit" class="btn main-blue text-white rounded-pill me-3 mb-2 w-100 w-lg-auto">Save
-                  Changes</button>
-                <!-- Button to cancel editing and return to view mode -->
-                <button (click)="cancelEdit()" class="btn secondary-grey rounded-pill w-100 w-lg-auto">Cancel</button>
-              </div>
+    <section class="mb-5">
+        <div class="d-flex flex-column">
+            <div class="d-flex justify-content-around justify-content-lg-between align-items-center">
+                <h1 class="text-main-blue Heebo-Bold fw-bold m-0">Your Profile.</h1>
+                <div class="d-flex">
+                    <button type="button"
+                        class="d-none d-lg-block btn group-button rounded-pill border-0 Heebo-Medium me-4 py-1 px-4"
+                        data-bs-toggle="modal" data-bs-target="#crateGroup"><i
+                            class="fa-solid fa-users-line me-1 text-main-blue"></i> Create new group plan</button>
+                    <button type="button" class="btn text-main-blue"><i class="fa-solid fa-user-pen"
+                            (click)="enterEditMode()"></i></button>
+                </div>
             </div>
-          </div>
-          }
-        </form>
-      </div>
-    </div>
-  </section>
-  <section class="plans-section">
-    <!-- Boton de crear grupo en sm -->
-    <button type="button" class="d-block d-lg-none btn group-button rounded-pill border-0 Heebo-Medium mb-3 py-2 px-4"
-      data-bs-toggle="modal" data-bs-target="#crateGroup"><i class="fa-solid fa-users-line me-1 text-main-blue"></i>
-      Create new group plan</button>
-    <!-- Boton de crear grupo en sm -->
-    <p class="Heebo-Bold text-black fs-3">Group plans</p>
-    <div class="table-component Blinker-Regular text-main-grey">
-      <table class="rounded-4">
-        <tbody>
-          <!-- Loop para mostar grupos de viaje -->
-          <!-- @for (item of items; track $index) {} -->
-          <tr>
-            <td class="fs-5"><i class="fa-solid fa-plane"></i> Bogotá (BOG)</td>
-            <td class="fs-5"><i class="fa-regular fa-calendar"></i> 10 Abril 2023</td>
-            <!-- Loop para mostar miembros del grupo -->
-            <!-- @for (item of items; track $index) {} -->
-            <td>
-              <img src="" alt="">
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+            <div class="Heebo-Regular text-main-grey d-flex align-items-center user-info fs-5">
+                <form [formGroup]="formEditUser" (submit)="saveChanges()" class="d-flex align-items-center">
+                    <!-- add modal -->
+                    <button type="button" class="rounded-circle user-image me-3 me-lg-5 p-0 border-0"
+                        data-bs-toggle="modal" data-bs-target="#editPhotoModal">
+                        <img class="rounded-circle user-image me-3 me-lg-5"
+                            src="https://as2.ftcdn.net/v2/jpg/03/49/49/79/1000_F_349497933_Ly4im8BDmHLaLzgyKg2f2yZOvJjBtlw5.jpg"
+                            alt="user-profile-photo">
+                    </button>
+
+                    @if (!isEditMode) {
+                    <div>
+                        <p>{{user.name}}</p>
+                        <p>{{user.age}}</p>
+                        <p>{{user.country}}</p>
+                    </div>
+                    }
+                    @if (isEditMode) {
+                    <div>
+                        <!-- Editable input fields -->
+                        <div class="d-flex flex-column">
+                            <input type="text" formControlName="name" class="mb-2 form-control" [value]="user.name">
+                            <input type="text" formControlName="age" class="mb-2 form-control" [value]="user.age">
+                            <input type="text" formControlName="country" class="mb-3 form-control"
+                                [value]="user.country">
+                            <div>
+                                <!-- Button to save changes and exit edit mode -->
+                                <button type="submit"
+                                    class="btn main-blue text-white rounded-pill me-3 mb-2 w-100 w-lg-auto">Save
+                                    Changes</button>
+                                <!-- Button to cancel editing and return to view mode -->
+                                <button (click)="cancelEdit()"
+                                    class="btn secondary-grey rounded-pill w-100 w-lg-auto">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="plans-section">
+        <!-- Boton de crear grupo en sm -->
+        <button type="button"
+            class="d-block d-lg-none btn group-button rounded-pill border-0 Heebo-Medium mb-3 py-2 px-4"
+            data-bs-toggle="modal" data-bs-target="#crateGroup"><i
+                class="fa-solid fa-users-line me-1 text-main-blue"></i>
+            Create new group plan</button>
+        <!-- Boton de crear grupo en sm -->
+        <p class="Heebo-Bold text-black fs-3">Group plans</p>
+        <div class="table-component Blinker-Regular text-main-grey">
+            <table class="rounded-4">
+                <tbody>
+                    <!-- Loop para mostar grupos de viaje -->
+                    <!-- @for (item of items; track $index) {} -->
+                    <tr>
+                        <td class="fs-5"><i class="fa-solid fa-plane"></i> Bogotá (BOG)</td>
+                        <td class="fs-5"><i class="fa-regular fa-calendar"></i> 10 Abril 2023</td>
+                        <!-- Loop para mostar miembros del grupo -->
+                        <!-- @for (item of items; track $index) {} -->
+                        <td>
+                            <img src="" alt="">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
 </main>
 
 <!-- Modal #crateGroup -->
 <div class="modal fade" id="crateGroup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="create-group-modal-dialog modal-dialog">
-    <div class="modal-content">
-      <button type="button" class="d-block d-lg-none btn-close ms-auto mt-4 me-4" data-bs-dismiss="modal"
-        aria-label="Close"></button>
-      <div class="create-group-modal-body modal-body  d-flex justify-content-center justify-content-lg-between p-0">
+    <div class="create-group-modal-dialog modal-dialog">
+        <div class="modal-content">
+            <button type="button" class="d-block d-lg-none btn-close ms-auto mt-4 me-4" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            <div
+                class="create-group-modal-body modal-body  d-flex justify-content-center justify-content-lg-between p-0">
 
-        <div class="d-block d-lg-none">
-          <h1 class="mb-5 Heebo-Bold text-main-blue">Create group plan.</h1>
-          <form action="" class="d-flex flex-column Heebo-Regular">
-            <label for="groupName" class="mb-2 fs-5">Group Name</label>
-            <input type="text" id="groupName" class="mb-5 rounded-pill secondary-grey border-0 py-2 px-4">
-            <label for="members" class="mb-2 fs-5">Members</label>
-            <select class="form-select mb-5 rounded-pill py-2 px-4" id="members">
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-            <div class="members-view">
-              <!-- @for (item of items; track $index) {} -->
-              <img src="" alt="">
-            </div>
-            <button type="submit" class="rounded-pill py-2 text-white main-blue fs-5 fw-bold border-0">Create
-              group</button>
-          </form>
-        </div>
+                <div class="d-block d-lg-none">
+                    <h1 class="mb-5 Heebo-Bold text-main-blue">Create group plan.</h1>
+                    <form action="" class="d-flex flex-column Heebo-Regular">
+                        <label for="groupName" class="mb-2 fs-5">Group Name</label>
+                        <input type="text" id="groupName" class="mb-5 rounded-pill secondary-grey border-0 py-2 px-4">
+                        <label for="members" class="mb-2 fs-5">Members</label>
+                        <select class="form-select mb-5 rounded-pill py-2 px-4" id="members">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <div class="members-view">
+                            <!-- @for (item of items; track $index) {} -->
+                            <img src="" alt="">
+                        </div>
+                        <button type="submit"
+                            class="rounded-pill py-2 text-white main-blue fs-5 fw-bold border-0">Create
+                            group</button>
+                    </form>
+                </div>
 
-        <!-- Form en lg -->
-        <div class="d-none d-lg-block white w-50 white-box rounded-end-5">
-          <h1 class="mb-5 Heebo-Bold text-main-blue">Create group plan.</h1>
-          <form action="" class="d-flex flex-column Heebo-Regular">
-            <label for="groupName" class="mb-2 fs-5">Group Name</label>
-            <input type="text" id="groupName" class="mb-5 rounded-pill secondary-grey border-0 py-2 px-4">
-            <label for="members" class="mb-2 fs-5">Members</label>
-            <select class="form-select mb-5 rounded-pill py-2 px-4" id="members">
-              <option selected>Open this select menu</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
-            </select>
-            <div class="members-view">
-              <!-- @for (item of items; track $index) {} -->
-              <img src="" alt="">
+                <!-- Form en lg -->
+                <div class="d-none d-lg-block white w-50 white-box rounded-end-5">
+                    <h1 class="mb-5 Heebo-Bold text-main-blue">Create group plan.</h1>
+                    <form action="" class="d-flex flex-column Heebo-Regular">
+                        <label for="groupName" class="mb-2 fs-5">Group Name</label>
+                        <input type="text" id="groupName" class="mb-5 rounded-pill secondary-grey border-0 py-2 px-4">
+                        <label for="members" class="mb-2 fs-5">Members</label>
+                        <select class="form-select mb-5 rounded-pill py-2 px-4" id="members">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <div class="members-view">
+                            <!-- @for (item of items; track $index) {} -->
+                            <img src="" alt="">
+                        </div>
+                        <button type="submit"
+                            class="rounded-pill py-2 text-white main-blue fs-5 fw-bold border-0">Create
+                            group</button>
+                    </form>
+                </div>
+                <!-- Form en lg -->
+                <button type="button" class="d-none d-lg-block btn-close mt-4 me-4" data-bs-dismiss="modal"
+                    aria-label="Close"></button>
             </div>
-            <button type="submit" class="rounded-pill py-2 text-white main-blue fs-5 fw-bold border-0">Create
-              group</button>
-          </form>
         </div>
-        <!-- Form en lg -->
-        <button type="button" class="d-none d-lg-block btn-close mt-4 me-4" data-bs-dismiss="modal"
-          aria-label="Close"></button>
-      </div>
     </div>
-  </div>
 </div>
 
 <!-- Modal #editPhoto -->
 <div class="modal fade" id="editPhotoModal" tabindex="-1" aria-labelledby="editPhotoLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="d-flex justify-content-between p-3">
-        <h1 class="modal-title fs-5 Heebo-Bold" id="editPhotoLabel">Change photo</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body d-flex flex-column align-items-center">
-        <img [src]="urlUserPhoto" alt="" class="w-50 rounded-circle mb-4">
-        <div class="input-group mb-3">
-          <input type="file" class="form-control" id="inputGroupFile02" (change)="onSelectFile($event)">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="d-flex justify-content-between p-3">
+                <h1 class="modal-title fs-5 Heebo-Bold" id="editPhotoLabel">Change photo</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex flex-column align-items-center">
+                <img [src]="urlUserPhoto" alt="" class="w-50 rounded-circle mb-4">
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="inputGroupFile02" (change)="onSelectFile($event)">
+                </div>
+            </div>
+            <div class="modal-footer Heebo-Regular">
+                <button type="button" class="btn secondary-grey rounded-pill" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn main-blue text-white rounded-pill">Save changes</button>
+            </div>
         </div>
-      </div>
-      <div class="modal-footer Heebo-Regular">
-        <button type="button" class="btn secondary-grey rounded-pill" data-bs-dismiss="modal">Cancel</button>
-        <button type="button" class="btn main-blue text-white rounded-pill">Save changes</button>
-      </div>
     </div>
-  </div>
 </div>
