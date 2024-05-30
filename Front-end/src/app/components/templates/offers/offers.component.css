@@ -2,12 +2,13 @@ img{
     border-bottom-left-radius:0px !important;
     border-top-left-radius:  0px !important;
     border-radius: 19.45px !important;
-    width: 256px;
+    width: 100%;
+    height: auto;
 
 }
-.col-sm-5.rounded-5 {
+/* .col-sm-5.rounded-5 {
     overflow: hidden;
-}
+} */
 button{
     border-radius: 29.66px;
     background-color: #2571f2;
