@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './components/home-page/home-page.component';
-import { RouteGuardService } from './services/route-guard.service';
+import { RouteGuardService } from './services/route-guard/route-guard.service';
 
 @Component({
     selector: 'app-root',
