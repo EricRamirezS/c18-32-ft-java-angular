@@ -15,6 +15,7 @@ input{
 .form-control {
     width: 50% !important;
 }
+
 input::placeholder {
     color: grey;
     font-size: 14px;
