@@ -1,0 +1,329 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 100px; /* Margen de 100px a cada lado */
+    box-sizing: border-box;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+}
+
+.banner-text {
+    position: absolute;
+    top: 60px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    color: white;
+    font-size: 70px;
+    padding: 10px;
+}
+
+.banner-text p {
+    margin-bottom: 10px; /* Espacio entre el párrafo y el encabezado */
+}
+
+.banner-text1 {
+    color: white;
+    font-size: 20px;
+    font-family: 'Blinker-Regular';
+}
+
+/* card informativas */
+.card-container {
+    display: flex; /* Establece el contenedor como flexbox */
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    margin-top: 10%;
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan */
+}
+
+.card-travel {
+    width: 350px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 150px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-text {
+    padding: 10px;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Espacio entre cada tarjeta y su botón */
+}
+
+/*botton ver lista */
+.ver-lista-btn {
+    background-color: var(--main-blue);
+    color: white;
+    border: none;
+    padding: 10px 60px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.ver-lista-btn:hover {
+    background-color: #0056b3;
+}
+
+/*Formulario*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--main-blue); /* Fondo azul */
+    color: white;
+    width: 100%; /* Ancho del formulario */
+    max-width: 1005px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 10%;
+    border-radius: 30px;
+}
+
+.form-container {
+    flex: 1; /* El formulario ocupará todo el espacio disponible */
+    padding: 20px;
+    margin-bottom: 20%;
+    margin-left: 30px;
+}
+
+.form-container form {
+    max-width: 350px; /* Ancho máximo del formulario */
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block; /* Para que las etiquetas estén en una línea separada */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--secondary-grey); /* Fondo gris claro para los campos */
+}
+
+.form-group textarea {
+    height: 100px; /* Altura del textarea */
+}
+
+button[type="submit"] {
+    padding: 10px 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: var(--white); /* Fondo azul oscuro para el botón */
+    color: black;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #004080; /* Fondo azul más oscuro al pasar el ratón */
+}
+
+.image-container {
+    flex: 1; /* La imagen ocupará todo el espacio disponible */
+    margin-top: 10%;
+    margin-right: 40px;
+    border-radius: 10px;
+}
+
+.image-container img {
+    max-width: 100%; /* La imagen se ajustará al ancho del contenedor */
+    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+}
+
+.contenido {
+    font-size: 12px;
+    font-family: 'Blinker-Regular';
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.5); 
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal.show {
+    display: block;
+}
+
+.round-image {
+    width: 100px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 100px;
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+    object-fit: cover; /* Ajusta la imagen para que ocupe todo el espacio disponible sin distorsión */
+}
+
+.card {
+    display: flex; /* Hace que los elementos dentro de la tarjeta se alineen horizontalmente */
+    margin-bottom: 20px; /* Espacio entre las tarjetas */
+}
+
+.card-content {
+    display: flex; /* Los elementos dentro de card-content también se alinearán horizontalmente */
+    align-items: center; /* Alinea los elementos verticalmente */
+}
+
+.card-image1 {
+    width: 100px; /* Ajusta el tamaño de la imagen según sea necesario */
+    height: 100px;
+    border-radius: 50%; /* Hace que la imagen sea redonda */
+    object-fit: cover; /* Ajusta la imagen para que ocupe todo el espacio disponible sin distorsión */
+    margin-right: 10px; /* Espacio entre la imagen y el texto */
+}
+
+.card-text {
+    flex-grow: 1; /* Hace que el texto ocupe todo el espacio restante */
+}
+
+/* Media Queries para adaptabilidad */
+@media (max-width: 1200px) {
+    .main-container {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    .banner-text {
+        font-size: 50px;
+    }
+
+    .banner-text1 {
+        font-size: 18px;
+    }
+
+    .card-travel {
+        width: 45%;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .form-container {
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    .image-container {
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 0 20px;
+    }
+
+    .banner-text {
+        font-size: 40px;
+    }
+
+    .banner-text1 {
+        font-size: 16px;
+    }
+
+    .card-travel {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-text {
+        font-size: 30px;
+    }
+
+    .banner-text1 {
+        font-size: 14px;
+    }
+
+    .ver-lista-btn {
+        padding: 10px 20px;
+    }
+
+    .form-container form {
+        max-width: 100%;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .image-container {
+        margin-top: 10px;
+        margin-right: 0;
+    }
+}
