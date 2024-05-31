@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
 }
-
+/* Estilos container */
 .main-container {
   max-width: 1440px;
   margin: 0 auto;
