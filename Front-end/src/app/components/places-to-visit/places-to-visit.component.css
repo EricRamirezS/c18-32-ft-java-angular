@@ -1,20 +1,24 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
 .main-container {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 100px; /* Margen de 100px a cada lado */
     box-sizing: border-box;
 }
-/*banner informativo */
-
 
 .banner {
     position: relative;
-    width: 1360px;
-    height: 500px;
+    width: 100%;
+    height: auto;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-   
 }
 
 .banner-image {
@@ -29,9 +33,8 @@
     color: white;
     font-size: 70px;
     padding: 10px;
-    
-    
 }
+
 .banner-text p {
     margin-bottom: 10px; /* Espacio entre el párrafo y el encabezado */
 }
@@ -40,15 +43,16 @@
     color: white;
     font-size: 20px;
     font-family: 'Blinker-Regular';
-   
 }
+
 /* card informativas */
 .card-container {
     display: flex; /* Establece el contenedor como flexbox */
     justify-content: center; /* Centra las tarjetas horizontalmente */
     margin-top: 10%;
-  }
-  
+    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan */
+}
+
 .card-travel {
     width: 350px;
     border: 1px solid #ccc;
@@ -56,26 +60,28 @@
     margin: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-  }
-  
+}
+
 .card-image {
     width: 100%;
     height: 150px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-  }
-  
+}
+
 .card-text {
     padding: 10px;
-  }
-  .card-wrapper {
+}
+
+.card-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 20px; /* Espacio entre cada tarjeta y su botón */
 }
+
 /*botton ver lista */
-  .ver-lista-btn {
+.ver-lista-btn {
     background-color: var(--main-blue);
     color: white;
     border: none;
@@ -88,17 +94,19 @@
 .ver-lista-btn:hover {
     background-color: #0056b3;
 }
+
 /*Formulario*/
 .container {
     display: flex;
+    flex-wrap: wrap;
     background-color: var(--main-blue); /* Fondo azul */
     color: white;
-    width: 1005px; /* Ancho del formulario */
-    height: 737px;
+    width: 100%; /* Ancho del formulario */
+    max-width: 1005px;
+    height: auto;
     margin: 0 auto;
     margin-top: 10%;
     border-radius: 30px;
-    
 }
 
 .form-container {
@@ -157,10 +165,12 @@ button[type="submit"]:hover {
     max-width: 100%; /* La imagen se ajustará al ancho del contenedor */
     height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
 }
+
 .contenido {
     font-size: 12px;
     font-family: 'Blinker-Regular';
 }
+
 .modal {
     display: none; 
     position: fixed; 
@@ -197,15 +207,18 @@ button[type="submit"]:hover {
     text-decoration: none;
     cursor: pointer;
 }
+
 .modal.show {
     display: block;
-  }
-  .round-image {
+}
+
+.round-image {
     width: 100px; /* Ajusta el tamaño de la imagen según sea necesario */
     height: 100px;
     border-radius: 50%; /* Hace que la imagen sea redonda */
     object-fit: cover; /* Ajusta la imagen para que ocupe todo el espacio disponible sin distorsión */
 }
+
 .card {
     display: flex; /* Hace que los elementos dentro de la tarjeta se alineen horizontalmente */
     margin-bottom: 20px; /* Espacio entre las tarjetas */
@@ -226,4 +239,91 @@ button[type="submit"]:hover {
 
 .card-text {
     flex-grow: 1; /* Hace que el texto ocupe todo el espacio restante */
+}
+
+/* Media Queries para adaptabilidad */
+@media (max-width: 1200px) {
+    .main-container {
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 992px) {
+    .banner-text {
+        font-size: 50px;
+    }
+
+    .banner-text1 {
+        font-size: 18px;
+    }
+
+    .card-travel {
+        width: 45%;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .form-container {
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+
+    .image-container {
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        padding: 0 20px;
+    }
+
+    .banner-text {
+        font-size: 40px;
+    }
+
+    .banner-text1 {
+        font-size: 16px;
+    }
+
+    .card-travel {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner-text {
+        font-size: 30px;
+    }
+
+    .banner-text1 {
+        font-size: 14px;
+    }
+
+    .ver-lista-btn {
+        padding: 10px 20px;
+    }
+
+    .form-container form {
+        max-width: 100%;
+    }
+
+    button[type="submit"] {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .image-container {
+        margin-top: 10px;
+        margin-right: 0;
+    }
 }
