@@ -47,10 +47,10 @@ body {
 
 /* card informativas */
 .card-container {
-    display: flex; /* Establece el contenedor como flexbox */
-    justify-content: center; /* Centra las tarjetas horizontalmente */
+    display: flex; 
+    justify-content: center; 
     margin-top: 10%;
-    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan */
+    flex-wrap: wrap; 
 }
 
 .card-travel {
@@ -162,8 +162,8 @@ button[type="submit"]:hover {
 }
 
 .image-container img {
-    max-width: 100%; /* La imagen se ajustará al ancho del contenedor */
-    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+    max-width: 100%; 
+    height: auto; 
 }
 
 .contenido {
@@ -232,9 +232,9 @@ button[type="submit"]:hover {
 .card-image1 {
     width: 100px; /* Ajusta el tamaño de la imagen según sea necesario */
     height: 100px;
-    border-radius: 50%; /* Hace que la imagen sea redonda */
-    object-fit: cover; /* Ajusta la imagen para que ocupe todo el espacio disponible sin distorsión */
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-right: 10px; 
 }
 
 .card-text {
