@@ -82,7 +82,8 @@ public class AuthController {
         authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userData.getEmail(),
                 data.getOldPassword()));
         UserAccountEntity user =
-                userAccountService.getUserAccountById(userData.getId()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
+                userAccountService.getUserAccountById(userData.getId())
+                        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "User not found"));
         user.setPassword(passwordEncoder.encode(data.getNewPassword()));
         user = userAccountService.saveUser(user);
         return ResponseEntity.ok(user);
@@ -90,10 +91,10 @@ public class AuthController {
 
 
     @PutMapping("/change-forgotten-password")
-    public ResponseEntity<UserAccountEntity> forgottenPasswordChange(@AuthenticationPrincipal UserPrincipal userData,
-                                                                     @RequestBody ForgottenPasswordChangeRequest data) {
+    public ResponseEntity<UserAccountEntity> forgottenPasswordChange(@RequestBody ForgottenPasswordChangeRequest data) {
         UserAccountEntity user =
-                userAccountService.getUserAccountByToken(data.getToken()).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Invalid token"));
+                userAccountService.getUserAccountByToken(data.getToken())
+                        .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Invalid token"));
         if (user.getTokenExpiryDate().isBefore(OffsetDateTime.now())) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Invalid token");
         }
@@ -177,15 +178,21 @@ public class AuthController {
     }
 
     private boolean sendVerificationEMail(@NotNull UserAccountEntity user, String callbackUrl, String token) {
-        return emailService.sendPlainEmail(List.of(new Recipient(user.getUsername(), user.getEmail())), "Verify your " +
-                                                                                                        "email",
-                "Account created, please verify your email with the next URL: \n" + "<a href=\"" + callbackUrl + token + "\"> Activation link </a>\n", true);
+        return emailService.sendPlainEmail(List.of(
+                new Recipient(user.getUsername(),
+                        user.getEmail())),
+                "Verify your email",
+                "Account created, please verify your email with the next URL: " +
+                "\n" + "<a href=\"" + callbackUrl + token + "\"> Activation link </a>\n",
+                true);
     }
 
     private boolean sendResetPasswordEMail(@NotNull UserAccountEntity user, String callbackUrl, String token) {
-        return emailService.sendPlainEmail(List.of(new Recipient(user.getUsername(), user.getEmail())), "Reset " +
-                                                                                                        "password",
-                "To change you password, please follow the next link: \n" + "<a href=\"" + callbackUrl + token + "\">" +
-                " Reset link </a>\n", true);
+        return emailService.sendPlainEmail(List.of(
+                new Recipient(user.getUsername(), user.getEmail())),
+                "Reset password",
+                "To change you password, please follow the next link: " +
+                "\n" + "<a href=\"" + callbackUrl + token + "\"> Reset link </a>\n",
+                true);
     }
 }

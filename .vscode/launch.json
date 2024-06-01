@@ -1,0 +1,26 @@
+{
+    // Use IntelliSense para saber los atributos posibles.
+    // Mantenga el puntero para ver las descripciones de los existentes atributos.
+    // Para más información, visite: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "C1832FtJavaAngularApplication",
+            "request": "launch",
+            "mainClass": "tech.nocountry.c1832ftjavaangular.C1832FtJavaAngularApplication",
+            "projectName": "c18-32-ft-java-angular",
+            "env": {
+                "ENVIRONMENT_PLATFORM": "dev",
+                "MAIL_KEY": "mlsn.41bca7b8a2ed4c2c590787c029079f883c95ca8afe228133cfd6fa1a06ee6621"
+              }
+        }
+    ]
+}

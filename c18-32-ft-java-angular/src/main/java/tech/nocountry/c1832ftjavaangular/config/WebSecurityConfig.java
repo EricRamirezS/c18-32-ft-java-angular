@@ -39,6 +39,7 @@ public class WebSecurityConfig {
                 .authorizeHttpRequests(registry ->
                         registry
                                 .requestMatchers("/").permitAll() // Swagger redirect
+                                .requestMatchers("/auth/recovery", "/auth/email-verify", "/auth/change-forgotten-password").permitAll() // Permitir endpoints de recuperacion
                                 .requestMatchers("/swagger-ui/**").permitAll()
                                 .requestMatchers("/v3/api-docs/**").permitAll()
                                 .requestMatchers("/auth/change-password").authenticated()

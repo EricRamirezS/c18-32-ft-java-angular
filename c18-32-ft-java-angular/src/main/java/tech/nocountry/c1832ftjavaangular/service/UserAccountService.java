@@ -20,4 +20,7 @@ public interface UserAccountService {
     Boolean existsUserAccountByUsername(String username);
 
     Boolean existsUserAccountByEmail(String email);
+
+    void resetPassword(String token, String newPassword); // Nuevo metodo en la interfaz
+
 }
