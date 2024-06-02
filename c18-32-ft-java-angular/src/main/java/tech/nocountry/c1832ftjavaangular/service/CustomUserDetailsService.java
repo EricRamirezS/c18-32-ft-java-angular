@@ -6,21 +6,25 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import tech.nocountry.c1832ftjavaangular.entity.UserAccountEntity;
+import tech.nocountry.c1832ftjavaangular.repository.UserAccountRepository;
 import tech.nocountry.c1832ftjavaangular.security.UserPrincipal;
 
 import java.util.List;
 
 @Component
+@Service
 @RequiredArgsConstructor
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private final UserAccountService userAccountService;
+    private final UserAccountRepository userAccountRepository; // Inyecta el repositorio directamente
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        UserAccountEntity user = userAccountService.getUserAccountByEmail(email).orElseThrow();
-        return loadUserByEntity(user);
+        // Busca el usuario por email en el repositorio (eliminando la dependencia de UserAccountService)
+        UserAccountEntity user = userAccountRepository.findByEmailIgnoreCase(email).orElseThrow();
+        return loadUserByEntity(user); // Convierte la entidad UserAccountEntity en un objeto UserDetails
     }
 
     public UserDetails loadUserByEntity(UserAccountEntity user) {
