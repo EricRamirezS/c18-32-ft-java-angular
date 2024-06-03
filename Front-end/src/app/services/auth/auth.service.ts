@@ -44,19 +44,20 @@ export class AuthService {
         );
     }
 
-    sendEmailPasswordRecovery(data: any): Observable<any> {
-        // Assuming you need to pass an authorization token
-        const token = sessionStorage.getItem('accessToken');
-        const headers = new HttpHeaders({
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${token}`
+    sendEmailPasswordRecovery(data: {
+        email: string;
+        callbackUrl: string;
+        redirectUrl: string;
+    }): Observable<any> {
+        const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+        return this.http.post(`${this.apiUrl}/auth/recovery`, data, {
+            headers,
         });
-        return this.http.post(`${this.apiUrl}/auth/recovery`, data, { headers });
     }
 
     changePassword(
         data: { oldPassword: string; newPassword: string },
-        token: string
+        token = sessionStorage.getItem('accessToken')
     ): Observable<any> {
         const headers = new HttpHeaders({
             'Content-Type': 'application/json',
@@ -67,10 +68,10 @@ export class AuthService {
         });
     }
 
-    changeForgottenPassword(data:{
-        token: string,
-        newPassword: string}
-    ): Observable<any> {
+    changeForgottenPassword(data: {
+        token: string;
+        newPassword: string;
+    }): Observable<any> {
         const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
         return this.http.put<any>(
             `${this.apiUrl}/auth/change-forgotten-password`,

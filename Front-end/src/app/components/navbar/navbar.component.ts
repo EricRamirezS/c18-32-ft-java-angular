@@ -7,6 +7,7 @@ import {
 } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth/auth.service';
+import Swal from 'sweetalert2';
 
 @Component({
     selector: 'app-navbar',
@@ -37,21 +38,40 @@ export class NavbarComponent {
         if (this.formForgotPass.valid) {
             const emailData = {
                 email: this.formForgotPass.get('email')?.value,
-                callbackUrl: 'https://c18-32-ft-java-angular-front-end.vercel.app/reset-password', // specify the callback URL here
-                redirectUrl: 'https://c18-32-ft-java-angular-front-end.vercel.app/', // specify the redirect URL here
+                callbackUrl:
+                    'https://c18-32-ft-java-angular-front-end.vercel.app/reset-password',
+                redirectUrl:
+                    'https://c18-32-ft-java-angular-front-end.vercel.app/',
             };
+
+            console.log('emailData', emailData);
 
             this.authService.sendEmailPasswordRecovery(emailData).subscribe(
                 (response) => {
                     console.log('Email sent successfully', response);
-                    // Handle success, e.g., display a message or navigate to another page
-                    alert(response.message);
+                    Swal.fire({
+                        title: 'Great! now ...',
+                        text: 'Check your email for the next step',
+                        imageUrl:
+                            'https://mailmeteor.com/logos/assets/PNG/Gmail_Logo_512px.png',
+                        imageWidth: 400,
+                        imageHeight: 200,
+                        imageAlt: 'email-image',
+                    });
                     this.router.navigate(['/']);
                 },
                 (error) => {
-                    console.log('Email sending failed', error);
-                    // Handle error
-                    alert('Failed to send email. Please try again later.');
+                    console.error('Email sending failed', error);
+                    if (error.status === 401) {
+                        console.error(
+                            'Unauthorized access - possibly backend logic error or CORS issue'
+                        );
+                    }
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong! Failed to send email. Please try again later.',
+                    });
                 }
             );
         } else {
