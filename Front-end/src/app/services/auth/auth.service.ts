@@ -1,6 +1,17 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
+import { catchError, map, tap } from 'rxjs/operators';
+
+interface LoginRequest {
+    email: string;
+    password: string;
+    emailVerificationCallbackUrl: string;
+}
+
+interface LoginResponse {
+    accessToken: string;
+}
 
 @Injectable({
     providedIn: 'root',
@@ -10,7 +21,7 @@ export class AuthService {
 
     constructor(private http: HttpClient) {}
 
-    register(data: {
+    register(userData: {
         username: string;
         email: string;
         password: string;
@@ -18,18 +29,37 @@ export class AuthService {
         redirectUrl: string;
     }): Observable<any> {
         const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-        return this.http.post(`${this.apiUrl}/auth/register`, data, {
-            headers,
-        });
+        return this.http
+            .post<any>(`${this.apiUrl}/register`, userData, { headers })
+            .pipe(
+                map((response) => {
+                    // Save the access token in the session storage
+                    if (response && response.accessToken) {
+                        sessionStorage.setItem(
+                            'accessToken',
+                            response.accessToken
+                        );
+                    }
+                    return response;
+                }),
+                catchError((error) => {
+                    console.error('Registration error:', error);
+                    return throwError(error);
+                })
+            );
     }
 
-    login(data: {
-        email: string;
-        password: string;
-        emailVerificationCallbackUrl: string;
-    }): Observable<any> {
-        const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
-        return this.http.post(`${this.apiUrl}/auth/login`, data, { headers });
+    login(data: LoginRequest): Observable<LoginResponse> {
+        return this.http.post<LoginResponse>(`${this.apiUrl}/login`, data).pipe(
+            tap((response: LoginResponse) => {
+                // Save the accessToken in sessionStorage
+                sessionStorage.setItem('accessToken', response.accessToken);
+            })
+        );
+    }
+
+    getAccessToken(): string | null {
+        return sessionStorage.getItem('accessToken');
     }
 
     emailVerify(data: {
