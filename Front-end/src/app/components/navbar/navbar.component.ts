@@ -76,7 +76,11 @@ export class NavbarComponent {
                 },
                 (error) => {
                     console.log('Registration failed', error);
-                    // Handle error, e.g., display an error message
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong! Failed Registration. Please try again later.',
+                    });
                 }
             );
         } else {
@@ -100,7 +104,11 @@ export class NavbarComponent {
                 },
                 (error) => {
                     console.error('Login failed', error);
-                    // Handle login error, e.g., display an error message to the user
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops...',
+                        text: 'Something went wrong! Failed Login. Please try again later.',
+                    });
                 }
             );
         } else {
