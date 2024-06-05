@@ -28,15 +28,15 @@ body {
 
 .banner-text {
     position: absolute;
-    top: 60px; /* Adjust as needed */
-    left: 10px; /* Adjust as needed */
+    top: 60px;
+    left: 10px; 
     color: white;
     font-size: 70px;
     padding: 10px;
 }
 
 .banner-text p {
-    margin-bottom: 10px; /* Espacio entre el párrafo y el encabezado */
+    margin-bottom: 10px; 
 }
 
 .banner-text1 {
@@ -47,10 +47,10 @@ body {
 
 /* card informativas */
 .card-container {
-    display: flex; /* Establece el contenedor como flexbox */
-    justify-content: center; /* Centra las tarjetas horizontalmente */
+    display: flex; 
+    justify-content: center; 
     margin-top: 10%;
-    flex-wrap: wrap; /* Permite que las tarjetas se envuelvan */
+    flex-wrap: wrap; 
 }
 
 .card-travel {
@@ -77,7 +77,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px; /* Espacio entre cada tarjeta y su botón */
+    margin-bottom: 20px; 
 }
 
 /*botton ver lista */
@@ -99,9 +99,9 @@ body {
 .container {
     display: flex;
     flex-wrap: wrap;
-    background-color: var(--main-blue); /* Fondo azul */
+    background-color: var(--main-blue); 
     color: white;
-    width: 100%; /* Ancho del formulario */
+    width: 100%; 
     max-width: 1005px;
     height: auto;
     margin: 0 auto;
@@ -162,8 +162,8 @@ button[type="submit"]:hover {
 }
 
 .image-container img {
-    max-width: 100%; /* La imagen se ajustará al ancho del contenedor */
-    height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+    max-width: 100%; 
+    height: auto; 
 }
 
 .contenido {
@@ -215,12 +215,12 @@ button[type="submit"]:hover {
 .round-image {
     width: 100px; /* Ajusta el tamaño de la imagen según sea necesario */
     height: 100px;
-    border-radius: 50%; /* Hace que la imagen sea redonda */
-    object-fit: cover; /* Ajusta la imagen para que ocupe todo el espacio disponible sin distorsión */
+    border-radius: 50%; 
+    object-fit: cover; 
 }
 
 .card {
-    display: flex; /* Hace que los elementos dentro de la tarjeta se alineen horizontalmente */
+    display: flex; 
     margin-bottom: 20px; /* Espacio entre las tarjetas */
 }
 
@@ -232,9 +232,9 @@ button[type="submit"]:hover {
 .card-image1 {
     width: 100px; /* Ajusta el tamaño de la imagen según sea necesario */
     height: 100px;
-    border-radius: 50%; /* Hace que la imagen sea redonda */
-    object-fit: cover; /* Ajusta la imagen para que ocupe todo el espacio disponible sin distorsión */
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    border-radius: 50%; 
+    object-fit: cover; 
+    margin-right: 10px; 
 }
 
 .card-text {
