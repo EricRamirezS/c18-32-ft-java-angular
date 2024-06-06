@@ -3,7 +3,9 @@ package tech.nocountry.c1832ftjavaangular.config;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -28,26 +30,22 @@ public class WebSecurityConfig {
 
     @Bean
     public SecurityFilterChain applicationSecurity(HttpSecurity http) throws Exception {
-        http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
         http
-                .cors(AbstractHttpConfigurer::disable)
-                .csrf(AbstractHttpConfigurer::disable)
+                .csrf(AbstractHttpConfigurer::disable).formLogin(AbstractHttpConfigurer::disable)
+                .cors(Customizer.withDefaults())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .formLogin(AbstractHttpConfigurer::disable)
                 .exceptionHandling(h -> h.authenticationEntryPoint(unauthorizedHandler))
                 .securityMatcher("/**")
+                .addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests(registry ->
-                        registry
+                        registry.requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                                 .requestMatchers("/").permitAll() // Swagger redirect
-                                .requestMatchers("/swagger-ui/**").permitAll()
-                                .requestMatchers("/v3/api-docs/**").permitAll()
+                                .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
                                 .requestMatchers("/auth/change-password").authenticated()
                                 .requestMatchers("/auth/**").permitAll()
                                 .requestMatchers("/test/auth/not-required").permitAll()
                                 .requestMatchers("/countries/**").permitAll()
-                                .anyRequest().authenticated()
-                );
-
+                                .anyRequest().authenticated());
         return http.build();
     }
 
